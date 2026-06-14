@@ -803,20 +803,39 @@ function initDiscoveryTool() {
   });
 }
 
-/* --- Video facade (click-to-load YouTube) --------------------- */
+/* --- Video facade (click-to-load YouTube or local MP4) -------- */
 function initVideoFacade() {
-  const frames = [...document.querySelectorAll("[data-video]")];
+  const frames = [...document.querySelectorAll("[data-video], [data-video-src]")];
   if (!frames.length) return;
 
   // YouTube's player needs a real HTTP(S) origin. Opened straight from disk
   // (file://) it returns "Error 153", so fall back to opening the video on
   // YouTube in a new tab. Served over http/https it embeds inline as normal.
+  // Local MP4 files play fine on file:// too.
   const canEmbed = location.protocol === "http:" || location.protocol === "https:";
 
   frames.forEach((frame) => {
     const play = () => {
+      if (frame.classList.contains("is-playing")) return;
+
+      // Self-hosted MP4 (e.g. the Our Story films)
+      const src = frame.dataset.videoSrc;
+      if (src) {
+        const video = document.createElement("video");
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.setAttribute("playsinline", "");
+        frame.classList.add("is-playing");
+        frame.appendChild(video);
+        video.focus();
+        return;
+      }
+
+      // YouTube embed
       const id = frame.dataset.video;
-      if (!id || frame.classList.contains("is-playing")) return;
+      if (!id) return;
 
       if (!canEmbed) {
         window.open(`https://youtu.be/${id}`, "_blank", "noopener");
@@ -825,7 +844,7 @@ function initVideoFacade() {
 
       const iframe = document.createElement("iframe");
       iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
-      iframe.title = "Olympic Paints Colour Cafe film";
+      iframe.title = "Olympic Paints film";
       iframe.loading = "lazy";
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
