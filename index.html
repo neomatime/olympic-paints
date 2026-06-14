@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Olympic Paints helps South African homeowners transform spaces through colour, design guidance, curated collections, and the immersive Colour Cafe experience." />
+    <title>Olympic Paints | A World Of Colour Reimagined</title>
+    <link rel="canonical" href="https://olympic-paints.vercel.app/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="assests/images/paint-splash.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://olympic-paints.vercel.app/#organization",
+            "name": "Olympic Paints",
+            "url": "https://olympicpaints.co.za/",
+            "logo": "https://olympic-paints.vercel.app/assests/images/logo.png",
+            "description": "A South African colour, lifestyle and home transformation partner with more than 40 years of heritage."
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://olympic-paints.vercel.app/#colour-cafe",
+            "name": "Olympic Paints Colour Cafe",
+            "description": "An immersive design destination for colour consultations, material exploration and home transformation guidance.",
+            "url": "https://olympic-paints.vercel.app/colour-cafe.html",
+            "address": { "@type": "PostalAddress", "addressCountry": "ZA" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ===== INTRO CURTAIN — four-scene paint sequence =====
+         S1 splash bursts | S2 wordmark over splash | S3 morph to coin | S4 brush sweep, curtain lifts -->
+    <div class="site-intro" id="site-intro" aria-hidden="true">
+      <div class="intro-slats">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="intro-scene">
+        <img class="intro-splash" src="assests/images/paint-splash.png" alt="" decoding="async" />
+        <div class="intro-word">
+          <span>OLYMPIC<small>&trade;</small></span>
+          <span>PAINTS</span>
+        </div>
+        <div class="intro-coin">
+          <img src="assests/images/logo.png" alt="" />
+        </div>
+        <svg class="intro-trail" viewBox="0 0 96 400" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="op-bristles" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#E3B009"/>
+              <stop offset="0.07" stop-color="#FBC70F"/>
+              <stop offset="0.16" stop-color="#FFD63E"/>
+              <stop offset="0.24" stop-color="#F2BB0B"/>
+              <stop offset="0.36" stop-color="#FBC70F"/>
+              <stop offset="0.45" stop-color="#FFD234"/>
+              <stop offset="0.58" stop-color="#F5BE0C"/>
+              <stop offset="0.70" stop-color="#FBC70F"/>
+              <stop offset="0.81" stop-color="#FFD63E"/>
+              <stop offset="0.90" stop-color="#F2BB0B"/>
+              <stop offset="1" stop-color="#E3B009"/>
+            </linearGradient>
+            <filter id="op-paint-edge" x="-25%" y="-8%" width="150%" height="116%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9 0.014" numOctaves="2" seed="7" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+          <g filter="url(#op-paint-edge)">
+            <rect x="7" y="-24" width="82" height="448" fill="url(#op-bristles)"/>
+          </g>
+        </svg>
+        <svg class="intro-brush" viewBox="0 0 120 170" aria-hidden="true">
+          <path d="M14 8 C14 4 18 2 24 3 L96 3 C102 2 106 4 106 8 L104 52 L16 52 Z" fill="#3A2E28"/>
+          <path d="M14 8 C30 1 90 1 106 8 L105 24 C80 15 40 15 15 24 Z" fill="#FBC70F"/>
+          <rect x="20" y="52" width="80" height="26" rx="6" fill="#B8AFA5"/>
+          <rect x="20" y="61" width="80" height="4" fill="#998F84"/>
+          <path d="M44 78 L76 78 L70 158 C70 165 50 165 50 158 Z" fill="#5C4E42"/>
+        </svg>
+      </div>
+      <button class="intro-skip" type="button" data-skip-intro>Skip</button>
+    </div>
+
+    <!-- ===== HEADER — Centered Circular Logo ===== -->
+    <header class="site-header" data-header>
+      <a class="mobile-brand" href="index.html" aria-label="Olympic Paints home">
+        <img src="assests/images/logo.png" alt="Olympic Paints" />
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <div class="nav-group nav-left">
+          <a href="our-story.html">Our Story</a>
+          <a href="colour-cafe.html">Colour Cafe</a>
+          <a href="products.html">Products</a>
+        </div>
+        <a class="brand" href="index.html" aria-label="Olympic Paints home">
+          <img src="assests/images/logo.png" alt="Olympic Paints" />
+        </a>
+        <div class="nav-group nav-right">
+          <a href="colour-collections.html">Collections</a>
+          <a href="inspiration.html">Inspiration</a>
+          <a href="find-a-store.html">Find a Store</a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </div>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main id="main">
+      <!-- ===== HERO — Cinematic Carousel ===== -->
+      <section class="hero">
+        <div class="hero-slide is-active" data-slide style="--image: url('https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_c768e03d-e562-4ba7-801e-b7db4975fec8.png')"></div>
+        <div class="hero-slide" data-slide style="--image: url('https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_aa7d96f6-4b98-404a-92ca-41fb6f205ae8.png')"></div>
+        <div class="hero-slide" data-slide style="--image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=82')"></div>
+        <div class="hero-content">
+          <p class="eyebrow">2026 Colour of the Year</p>
+          <h1>Inspiring<br><em>Optimism</em></h1>
+          <p>Colour, creativity and expert guidance brought together at the Colour Cafe so you can choose paint with confidence.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="contact.html#atlas">Book a Colour Cafe consultation</a>
+            <a class="button ghost" href="colour-collections.html">Explore colours</a>
+          </div>
+        </div>
+        <div class="hero-dots" aria-label="Hero scenes">
+          <button class="is-active" type="button" aria-label="Show cinematic living room" data-dot="0"></button>
+          <button type="button" aria-label="Show warm interior" data-dot="1"></button>
+          <button type="button" aria-label="Show light-filled space" data-dot="2"></button>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">Scroll</div>
+        <p class="hero-side" aria-hidden="true">Paint Manufacturer &mdash; Est. 1981 &middot; Lenasia ZA</p>
+      </section>
+
+      <!-- ===== STATS STRIP ===== -->
+      <section class="stats-strip" aria-label="Key statistics">
+        <div class="stat-item reveal">
+          <span class="stat-number" data-count="40"><span class="accent">40</span>+</span>
+          <span class="stat-label">Years of Heritage</span>
+        </div>
+        <div class="stat-item reveal" data-delay="1">
+          <span class="stat-number" data-count="1200">1,200<span class="accent">+</span></span>
+          <span class="stat-label">Curated Colours</span>
+        </div>
+        <div class="stat-item reveal" data-delay="2">
+          <span class="stat-number" data-count="5000">5,000<span class="accent">+</span></span>
+          <span class="stat-label">Homes Transformed</span>
+        </div>
+        <div class="stat-item reveal" data-delay="3">
+          <span class="stat-number">5.0 <span class="accent">&#9733;</span></span>
+          <span class="stat-label">Google Reviews</span>
+        </div>
+      </section>
+
+      <!-- ===== COLOUR CAFE EXPLAINER ===== -->
+      <section class="cafe-primer reveal" aria-labelledby="cafe-primer-title">
+        <div class="cafe-primer-copy">
+          <p class="section-kicker">The Olympic Paints Difference</p>
+          <h2 id="cafe-primer-title">Colour Cafe turns colour uncertainty into a clear design direction.</h2>
+          <p>It is the signature Olympic Paints experience: a guided consultation where colour specialists and versatile interior designers help you connect palette, finish, materials, light and paint products before you buy.</p>
+        </div>
+        <div class="cafe-primer-steps" aria-label="Colour Cafe outcomes">
+          <article><span>01</span><h3>Discover</h3><p>Share your space, style, mood and practical needs.</p></article>
+          <article><span>02</span><h3>Design</h3><p>Build a palette with materials, finishes and room direction.</p></article>
+          <article><span>03</span><h3>Purchase</h3><p>Leave with paint and equipment recommendations you can act on.</p></article>
+        </div>
+        <div class="cafe-primer-actions">
+          <a class="button primary-dark" href="colour-cafe.html">Understand Colour Cafe</a>
+          <a class="text-link" href="contact.html#atlas">Book with Atlas</a>
+        </div>
+      </section>
+
+      <!-- ===== COLOUR DISCOVERY ===== -->
+      <section class="discovery-section reveal" data-discovery-section aria-labelledby="discovery-title">
+        <div class="discovery-copy">
+          <p class="section-kicker gold">Start Here</p>
+          <h2 id="discovery-title">Find your colour direction before you book.</h2>
+          <p>Choose the closest starting point and we will suggest a consultation focus you can take straight to Atlas.</p>
+        </div>
+        <div class="discovery-board">
+          <div class="discovery-options" role="group" aria-label="Choose your project starting point">
+            <button type="button" class="is-active" data-discovery-choice="home">Home refresh</button>
+            <button type="button" data-discovery-choice="retail">Retail or hospitality</button>
+            <button type="button" data-discovery-choice="work">Office or studio</button>
+            <button type="button" data-discovery-choice="exterior">Exterior update</button>
+          </div>
+          <div class="discovery-result" data-discovery-result>
+            <span>Recommended next step</span>
+            <h3>Book a Colour Cafe consultation</h3>
+            <p>Bring room photos, natural-light notes and any furniture or flooring references. Atlas will help prepare the brief.</p>
+            <a class="button primary" href="contact.html#atlas">Continue with Atlas</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== INTRO BAND ===== -->
+      <section class="intro-band light-section reveal">
+        <p class="section-kicker">Transformation Partner</p>
+        <h2>We manufacture paint for the spaces people imagine first.</h2>
+        <p>Olympic Paints blends curated coatings, colour expertise and design guidance so homeowners can move from possibility to a beautiful space with confidence.</p>
+      </section>
+
+      <!-- ===== COLOUR CAFE SPLIT ===== -->
+      <section class="split-section">
+        <div class="split-media reveal media-reveal">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_6ebea8f8-552f-4638-ab05-b057ae298e29.png" alt="Olympic Paints colour and finish inspiration" loading="lazy" />
+        </div>
+        <div class="split-copy reveal" data-delay="1">
+          <p class="section-kicker sage">The Colour Cafe</p>
+          <h2>Coffee. Connection. Colour. <em>Creation.</em></h2>
+          <p>The Colour Cafe is a boutique design destination where you slow down, explore palettes, build feel boards and work with consultants who translate inspiration into a home you can imagine clearly.</p>
+          <a class="text-link" href="colour-cafe.html">Step inside the experience</a>
+        </div>
+      </section>
+
+      <!-- ===== JOURNEY STEPS — Pinned Scroll Scene ===== -->
+      <section class="dark-section pin-section" data-pin data-pin-steps="5" style="--pin-h:300vh">
+        <div class="pin-stage">
+          <div class="journey-section reveal" aria-labelledby="journey-title">
+            <p class="section-kicker gold">Guided Experience</p>
+            <h2 id="journey-title">Your future home, designed in five calm steps.</h2>
+            <div class="journey-grid">
+              <article><span>01</span><h3>Coffee</h3><p>Arrive, settle in and begin with a conversation instead of a catalogue.</p></article>
+              <article><span>02</span><h3>Connect</h3><p>Share your home, your light, your textures and the feeling you want.</p></article>
+              <article><span>03</span><h3>Colour</h3><p>Explore palettes in context with flooring, furniture, lighting and materials.</p></article>
+              <article><span>04</span><h3>Create</h3><p>Build a visual direction with feel boards, finishes and room-by-room thinking.</p></article>
+              <article><span>05</span><h3>Transform</h3><p>Leave with confidence, clarity and a path to a more beautiful home.</p></article>
+            </div>
+            <div class="journey-progress" aria-hidden="true"><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== COLOUR FLOOD — Pinned Scroll Scene ===== -->
+      <section class="flood-section pin-section" id="colour-flood" data-flood-section data-pin data-pin-steps="5" style="--pin-h:280vh">
+        <div class="pin-stage">
+        <div class="flood-inner">
+          <div class="flood-copy reveal">
+            <p class="section-kicker">Feel The Colour</p>
+            <h2>Don't pick a colour. <em>Try it on.</em></h2>
+            <p>Glide across the swatches and watch this whole room change its mood. When one feels like home, bring it to the Colour Cafe and we'll build the rest of the palette around it.</p>
+            <span class="flood-name" data-flood-name>Optimism Yellow</span>
+            <div class="flood-actions">
+              <a class="button primary-dark" href="colour-collections.html">Build your palette</a>
+              <a class="text-link" href="contact.html#atlas">Book a consultation</a>
+            </div>
+          </div>
+          <div class="flood-swatches reveal" data-delay="1">
+            <button type="button" class="flood-swatch is-active" style="--sw:#FBC70F" data-flood="#FFF3C9" data-name="Optimism Yellow" aria-label="Preview Optimism Yellow"></button>
+            <button type="button" class="flood-swatch" style="--sw:#CFE5F4" data-flood="#EAF4FB" data-name="Sky Wash" aria-label="Preview Sky Wash"></button>
+            <button type="button" class="flood-swatch" style="--sw:#7E9B72" data-flood="#E6EDE1" data-name="Olive Grove" aria-label="Preview Olive Grove"></button>
+            <button type="button" class="flood-swatch" style="--sw:#C97E5A" data-flood="#F6E7DD" data-name="Terracotta Dust" aria-label="Preview Terracotta Dust"></button>
+            <button type="button" class="flood-swatch" style="--sw:#E8E1D5" data-flood="#F6F2EA" data-name="Soft Linen" aria-label="Preview Soft Linen"></button>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- ===== EDITORIAL GRID — Light Section ===== -->
+      <section class="light-section">
+        <div class="editorial-section">
+          <div class="section-heading reveal">
+            <div>
+              <p class="section-kicker">Inspiration Journal</p>
+              <h2>Ideas for rooms with a deeper sense of <em>self.</em></h2>
+            </div>
+            <a class="text-link" href="inspiration.html">Read the journal</a>
+          </div>
+          <div class="editorial-grid">
+            <article class="story-card large reveal media-reveal">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=82" alt="Layered living room in warm neutral tones" loading="lazy" />
+              <div class="story-card-content">
+                <p>Colour of the Year</p>
+                <h3>Optimism as an interior language</h3>
+              </div>
+            </article>
+            <article class="story-card reveal media-reveal" data-delay="1">
+              <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1000&q=82" alt="Designer reviewing fabric and colour samples" loading="lazy" />
+              <div class="story-card-content">
+                <p>Designer Collections</p>
+                <h3>Palettes shaped by material, mood and light</h3>
+              </div>
+            </article>
+            <article class="story-card reveal media-reveal" data-delay="2">
+              <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_2d5368d6-76ec-4138-9dba-25cb57ea653f.png" alt="Cinematic brush strokes" loading="lazy" />
+              <div class="story-card-content">
+                <p>Trending Spaces</p>
+                <h3>The art of refined everyday rooms</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SCROLL STORY SEQUENCE ===== -->
+      <section class="story-sequence" data-story-sequence aria-label="Inspiration storytelling sequence">
+        <article class="story-panel is-active" data-story-panel>
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=82" alt="Layered living room in warm neutral tones" loading="lazy" />
+          <div class="story-panel-copy">
+            <p class="section-kicker">Inspiration Journal</p>
+            <h2>Optimism as an interior language.</h2>
+            <p>Begin with the feeling. Then let light, texture and colour shape a room that carries it beautifully.</p>
+            <a class="text-link" href="inspiration.html">Read the journal</a>
+          </div>
+        </article>
+        <article class="story-panel" data-story-panel>
+          <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=2200&q=82" alt="Designer reviewing fabric and colour samples" loading="lazy" />
+          <div class="story-panel-copy">
+            <p class="section-kicker">Designer Collections</p>
+            <h2>Palettes shaped by material, mood and light.</h2>
+            <p>See colours beside flooring, fabric, furniture and finishes before the first wall is painted.</p>
+            <a class="text-link" href="colour-collections.html">Explore collections</a>
+          </div>
+        </article>
+        <article class="story-panel" data-story-panel>
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_2d5368d6-76ec-4138-9dba-25cb57ea653f.png" alt="Cinematic paint texture and interior mood" loading="lazy" />
+          <div class="story-panel-copy">
+            <p class="section-kicker">Trending Spaces</p>
+            <h2>The art of refined everyday rooms.</h2>
+            <p>From homes to studios, offices, stores and hospitality spaces, Olympic Paints helps build the atmosphere.</p>
+            <a class="text-link" href="colour-cafe.html">Visit the Colour Cafe</a>
+          </div>
+        </article>
+        <div class="story-progress" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+
+      <!-- ===== REVIEWS ===== -->
+      <section class="light-section" style="background:var(--warm-white)">
+        <div class="reviews-section section-wrap">
+          <div class="section-heading reveal">
+            <div>
+              <p class="section-kicker gold">Testimonials</p>
+              <h2>What our community <em>says</em></h2>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <svg style="width:16px;height:16px;fill:var(--gold)" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span style="font-weight:700;font-size:0.92rem">5.0</span>
+              <span style="color:var(--muted);font-size:0.82rem">on Google</span>
+            </div>
+          </div>
+          <div class="reviews-grid" id="reviews-grid">
+            <div class="review-card reveal">
+              <div class="review-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+              <blockquote>&ldquo;The space is beautifully designed with a perfect balance of style and comfort. The atmosphere is calm and welcoming.&rdquo;</blockquote>
+              <div class="review-author"><div class="review-avatar">KN</div><span>Katlego Nkosi</span></div>
+            </div>
+            <div class="review-card reveal" data-delay="1">
+              <div class="review-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+              <blockquote>&ldquo;This place is out of this world. You wouldn't expect a place like this in Centurion or South Africa. It makes life seem so peaceful.&rdquo;</blockquote>
+              <div class="review-author"><div class="review-avatar">TM</div><span>Thego Malema</span></div>
+            </div>
+            <div class="review-card reveal" data-delay="2">
+              <div class="review-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+              <blockquote>&ldquo;What an amazing experience. It honestly felt like a one stop shop for everything we needed, and the fact that they even helped with interior design advice at no extra cost was a huge bonus.&rdquo;</blockquote>
+              <div class="review-author"><div class="review-avatar">MK</div><span>Marno Koen</span></div>
+            </div>
+            <div class="review-card reveal" data-delay="3">
+              <div class="review-stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+              <blockquote>&ldquo;Expert decor and paint advice. I've just bought my first home and have no idea where to begin. Nadine and her team took the time to understand what I'm trying to achieve.&rdquo;</blockquote>
+              <div class="review-author"><div class="review-avatar">JC</div><span>Jessica Cash</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA BANNER ===== -->
+      <section class="cta-banner reveal">
+        <div class="cta-banner-bg" style="background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_2d5368d6-76ec-4138-9dba-25cb57ea653f.png')"></div>
+        <div class="cta-banner-overlay"></div>
+        <div class="cta-banner-content">
+          <h2>Let's shape a space<br>that feels like <em>home</em></h2>
+          <a class="button primary" href="contact.html">Start Your Project</a>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="light-section">
+        <div class="answer-blocks reveal" aria-labelledby="answers-title">
+          <p class="section-kicker">Helpful Answers</p>
+          <h2 id="answers-title">Transform your home with confidence.</h2>
+          <details open>
+            <summary>What paint should I use?</summary>
+            <p>Start with VibrAInt. Use the AI-powered colour tool to visualise the look and feel you want for your space, then bring that direction to Olympic Paints so the team can match it to the right colour, finish, durability and paint performance.</p>
+          </details>
+          <details>
+            <summary>How do I choose paint colours?</summary>
+            <p>Look at flooring, furniture, textiles, daylight and the emotional quality you want. The Colour Cafe lets you compare palettes beside real materials before you commit.</p>
+          </details>
+          <details>
+            <summary>What is the Colour Cafe?</summary>
+            <p>It is an immersive design destination where coffee, colour consultations, feel boards and expert guidance help you design your future home.</p>
+          </details>
+          <details>
+            <summary>How do colour consultations work?</summary>
+            <p>A consultant listens to your goals, studies your space and guides you through palettes, finishes and practical choices so you leave with a clear direction.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Olympic Paints home">
+            <img src="assests/images/logo.png" alt="Olympic Paints" />
+          </a>
+          <p>Olympic Paints blends simple lines, honest materials, and refined details to create interiors that feel calm, personal, and grounded. Since 1981.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="colour-collections.html">Colours</a>
+          <a href="products.html">Products</a>
+          <a href="inspiration.html">Inspiration</a>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="colour-cafe.html">Colour Cafe</a>
+          <a href="our-story.html">Our Story</a>
+          <a href="find-a-store.html">Find a Store</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <a href="tel:+27118571045">(011) 857 1045</a>
+          <a href="mailto:info@olympicpaints.co.za">info@olympicpaints.co.za</a>
+          <p style="color:var(--muted);font-size:0.84rem;line-height:1.6;margin-top:8px">28 Mecca Rd, Lenasia, 1827<br>Gauteng, South Africa</p>
+        </div>
+      </div>
+      <p class="footer-wordmark" aria-hidden="true">Olympic <em>Paints</em></p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Olympic Paints. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="shipping.html">Shipping</a>
+          <a href="returns.html">Returns</a>
+        </div>
+      </div>
+    </footer>
+
+    <nav class="mobile-conversion-bar" aria-label="Quick actions">
+      <a href="contact.html#atlas">Book</a>
+      <a href="colour-collections.html">Colours</a>
+      <a href="products.html">Shop</a>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>

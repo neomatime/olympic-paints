@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Shop Olympic Paints curated paints, coatings, sample pots and paint equipment from a South African paint manufacturer." />
+    <title>Products | Olympic Paints</title>
+    <link rel="canonical" href="https://olympic-paints.vercel.app/products.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-shell">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" data-header>
+      <a class="mobile-brand" href="index.html" aria-label="Olympic Paints home">
+        <img src="assests/images/logo.png" alt="Olympic Paints" />
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <div class="nav-group nav-left">
+          <a href="our-story.html">Our Story</a>
+          <a href="colour-cafe.html">Colour Cafe</a>
+          <a href="products.html" aria-current="page">Products</a>
+        </div>
+        <a class="brand" href="index.html" aria-label="Olympic Paints home">
+          <img src="assests/images/logo.png" alt="Olympic Paints" />
+        </a>
+        <div class="nav-group nav-right">
+          <a href="colour-collections.html">Collections</a>
+          <a href="inspiration.html">Inspiration</a>
+          <a href="find-a-store.html">Find a Store</a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+          <button class="cart-toggle" data-open-cart aria-label="Open shopping cart">
+            <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="cart-badge">0</span>
+          </button>
+        </div>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main id="main">
+      <!-- ===== PAGE HERO ===== -->
+      <section class="page-hero-dark">
+        <div class="page-hero-dark-bg" style="background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_6ebea8f8-552f-4638-ab05-b057ae298e29.png')"></div>
+        <div class="page-hero-content">
+          <p class="eyebrow">Paints &amp; Equipment</p>
+          <h1>Curated paint, made by Olympic Paints.</h1>
+          <p>Olympic Paints is a South African paint manufacturer selling premium interior paints, exterior coatings, specialist finishes, sample pots and the equipment needed to complete the job with confidence.</p>
+        </div>
+      </section>
+
+      <section class="manufacturer-band" aria-label="Olympic Paints manufacturing strengths">
+        <article>
+          <span>01</span>
+          <h2>Manufactured in South Africa</h2>
+          <p>Coatings made for local homes, weather, light and daily living.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Curated by colour specialists</h2>
+          <p>Products and palettes selected to support complete space transformation.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Paint and equipment together</h2>
+          <p>Everything needed to sample, prepare, apply and finish with confidence.</p>
+        </article>
+      </section>
+
+      <section class="product-intent-strip" aria-label="Shop by project need">
+        <a href="#product-grid" data-filter-jump="interior">
+          <span>Interior walls</span>
+          <strong>Premium colour and washable finishes</strong>
+        </a>
+        <a href="#product-grid" data-filter-jump="exterior">
+          <span>Exterior surfaces</span>
+          <strong>Durability for South African weather</strong>
+        </a>
+        <a href="#product-grid" data-filter-jump="equipment">
+          <span>Tools and equipment</span>
+          <strong>Everything to prepare, apply and finish</strong>
+        </a>
+        <a href="contact.html#atlas">
+          <span>Not sure yet?</span>
+          <strong>Ask Atlas before you buy</strong>
+        </a>
+      </section>
+
+      <!-- ===== FILTERS + PRODUCT GRID ===== -->
+      <section class="light-section">
+        <div class="section-wrap section-pad">
+          <div class="product-section-heading">
+            <div>
+              <p class="section-kicker gold">Shop The Range</p>
+              <h2>Paint systems for every surface and stage.</h2>
+            </div>
+            <p>Start with the finish and surface you need, then refine the colour direction with VibrAInt, Atlas or a Colour Cafe designer.</p>
+          </div>
+          <div class="product-filters" aria-label="Filter products">
+            <button class="filter-chip is-active" data-filter="all">All Products</button>
+            <button class="filter-chip" data-filter="interior">Interior</button>
+            <button class="filter-chip" data-filter="exterior">Exterior</button>
+            <button class="filter-chip" data-filter="specialty">Specialty</button>
+            <button class="filter-chip" data-filter="equipment">Equipment</button>
+          </div>
+
+          <div class="shop-toolbar" aria-label="Product shopping tools">
+            <label>
+              <span>Room size</span>
+              <select data-room-estimator>
+                <option value="small">Small room</option>
+                <option value="medium" selected>Medium room</option>
+                <option value="large">Large room</option>
+                <option value="exterior">Exterior project</option>
+              </select>
+            </label>
+            <div class="shop-estimate" data-shop-estimate>
+              Medium room estimate: start with 5L paint plus prep tools.
+            </div>
+            <a href="https://vibraint.net/global-room-selection" target="_blank" rel="noopener">Open VibrAint</a>
+          </div>
+
+          <div class="product-grid" id="product-grid">
+            <!-- Product 1: Velvet Interior -->
+            <article class="product-card reveal" data-category="interior" data-product-id="velvet-interior">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=82" alt="PlatinumPlus Velvet Interior paint" loading="lazy" />
+                <span class="product-badge bestseller">Best Seller</span>
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#FFFFFF"></span>
+                  <span style="background:#FBC70F"></span>
+                  <span style="background:#7E9B72"></span>
+                  <span style="background:#CFE5F4"></span>
+                  <span style="background:#111111"></span>
+                </div>
+                <h3>PlatinumPlus Velvet Interior</h3>
+                <p class="product-category">Curated Interior Paint</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>4.9 (128)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="549">5L &mdash; R 549</option>
+                  <option data-price="1899">20L &mdash; R 1,899</option>
+                </select>
+                <button class="add-to-bag" data-price="549">Add to Bag</button>
+              </div>
+            </article>
+
+            <!-- Product 2: Satin Interior -->
+            <article class="product-card reveal" data-delay="1" data-category="interior" data-product-id="satin-interior">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=800&q=82" alt="PlatinumPlus Satin Interior" loading="lazy" />
+                <span class="product-badge new">New</span>
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#FFFFFF"></span>
+                  <span style="background:#E8E8E3"></span>
+                  <span style="background:#FFE680"></span>
+                  <span style="background:#6B9ECF"></span>
+                </div>
+                <h3>PlatinumPlus Satin Interior</h3>
+                <p class="product-category">Washable Interior Paint</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>4.8 (96)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="649">5L &mdash; R 649</option>
+                  <option data-price="2199">20L &mdash; R 2,199</option>
+                </select>
+                <button class="add-to-bag" data-price="649">Add to Bag</button>
+              </div>
+            </article>
+
+            <!-- Product 3: Matt Exterior -->
+            <article class="product-card reveal" data-delay="2" data-category="exterior" data-product-id="matt-exterior">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=82" alt="PlatinumPlus Exterior finish" loading="lazy" />
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#FFFFFF"></span>
+                  <span style="background:#E8E8E3"></span>
+                  <span style="background:#CFE5F4"></span>
+                  <span style="background:#4F6072"></span>
+                </div>
+                <h3>PlatinumPlus Matt Exterior</h3>
+                <p class="product-category">Weather-Resistant Exterior Paint</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>4.7 (84)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="699">5L &mdash; R 699</option>
+                  <option data-price="2399">20L &mdash; R 2,399</option>
+                </select>
+                <button class="add-to-bag" data-price="699">Add to Bag</button>
+              </div>
+            </article>
+
+            <!-- Product 4: Roof Paint -->
+            <article class="product-card reveal" data-category="specialty" data-product-id="roof-paint">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=82" alt="PlatinumPlus Roof Paint" loading="lazy" />
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#111111"></span>
+                  <span style="background:#4F6072"></span>
+                  <span style="background:#7E9B72"></span>
+                </div>
+                <h3>PlatinumPlus Roof Paint</h3>
+                <p class="product-category">Specialist Roof Coating</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>4.6 (52)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="2199">20L &mdash; R 2,199</option>
+                </select>
+                <button class="add-to-bag" data-price="2199">Add to Bag</button>
+              </div>
+            </article>
+
+            <!-- Product 5: Wood & Metal -->
+            <article class="product-card reveal" data-delay="1" data-category="specialty" data-product-id="wood-metal">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=800&q=82" alt="PlatinumPlus Wood and Metal" loading="lazy" />
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#111111"></span>
+                  <span style="background:#4F6072"></span>
+                  <span style="background:#FBC70F"></span>
+                  <span style="background:#C0C0C0"></span>
+                </div>
+                <h3>PlatinumPlus Wood &amp; Metal</h3>
+                <p class="product-category">Specialist Multi-Surface Paint</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>4.8 (67)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="349">1L &mdash; R 349</option>
+                  <option data-price="1299">5L &mdash; R 1,299</option>
+                </select>
+                <button class="add-to-bag" data-price="349">Add to Bag</button>
+              </div>
+            </article>
+
+            <!-- Product 6: Sample Pots -->
+            <article class="product-card reveal" data-delay="2" data-category="interior" data-product-id="sample-pots">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=82" alt="Olympic sample pots" loading="lazy" />
+                <span class="product-badge new">Popular</span>
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#FBC70F"></span>
+                  <span style="background:#7E9B72"></span>
+                  <span style="background:#FFF2A8"></span>
+                  <span style="background:#6B8CAE"></span>
+                  <span style="background:#9B7CB5"></span>
+                </div>
+                <h3>Olympic Sample Pots</h3>
+                <p class="product-category">Curated Colour Testing</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>5.0 (210)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="60">250ml &mdash; R 60</option>
+                </select>
+                <button class="add-to-bag" data-price="60">Add to Bag</button>
+              </div>
+            </article>
+
+            <!-- Product 7: Roller Kit -->
+            <article class="product-card reveal" data-category="equipment" data-product-id="roller-kit">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=82" alt="Olympic Paints roller tray and paint equipment kit" loading="lazy" />
+                <span class="product-badge bestseller">Equipment</span>
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#FFFFFF"></span>
+                  <span style="background:#FBC70F"></span>
+                  <span style="background:#111111"></span>
+                </div>
+                <h3>Olympic Roller &amp; Tray Kit</h3>
+                <p class="product-category">Paint Application Equipment</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>4.8 (74)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="249">Complete Kit &mdash; R 249</option>
+                </select>
+                <button class="add-to-bag" data-price="249">Add to Bag</button>
+              </div>
+            </article>
+
+            <!-- Product 8: Brush Set -->
+            <article class="product-card reveal" data-delay="1" data-category="equipment" data-product-id="brush-set">
+              <div class="product-card-image">
+                <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=82" alt="Olympic Paints paint brush set and preparation tools" loading="lazy" />
+              </div>
+              <div class="product-card-body">
+                <div class="product-swatches">
+                  <span style="background:#FFFFFF"></span>
+                  <span style="background:#E8E8E3"></span>
+                  <span style="background:#FBC70F"></span>
+                </div>
+                <h3>Olympic Brush &amp; Prep Set</h3>
+                <p class="product-category">Brushes, Tape &amp; Prep Tools</p>
+                <div class="product-rating">
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span>4.7 (59)</span>
+                </div>
+                <select class="size-select" aria-label="Select size">
+                  <option data-price="179">Starter Set &mdash; R 179</option>
+                </select>
+                <button class="add-to-bag" data-price="179">Add to Bag</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Free shipping banner -->
+          <div style="text-align:center;padding:40px 0 0;color:var(--sage);font-weight:600;font-size:0.88rem">
+            <svg style="width:20px;height:20px;vertical-align:middle;margin-right:6px;stroke:var(--sage);fill:none;stroke-width:2" viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 4v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Free delivery on orders over R 1,500
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== CART DRAWER ===== -->
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="cart-drawer-panel">
+        <div class="cart-drawer-header">
+          <h3>Your Bag</h3>
+          <button class="cart-close" data-close-cart aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-drawer-body">
+          <div class="cart-empty" id="cart-empty">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <p style="font-weight:600;margin-bottom:4px">Your bag is empty</p>
+            <p style="font-size:0.82rem">Add something beautiful to get started.</p>
+          </div>
+          <div id="cart-items"></div>
+        </div>
+        <div class="cart-drawer-footer" id="cart-footer" style="display:none">
+          <div class="cart-subtotal-row">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">R 0</strong>
+          </div>
+          <p class="cart-free-shipping">Free shipping on orders over R 1,500</p>
+          <a href="checkout.html" class="cart-checkout-btn">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-quick-view" data-product-modal aria-hidden="true">
+      <div class="product-quick-view-panel" role="dialog" aria-modal="true" aria-labelledby="quick-view-title">
+        <button class="product-quick-close" type="button" data-close-product-modal aria-label="Close product details">&times;</button>
+        <div class="product-quick-media">
+          <img data-quick-image alt="" />
+        </div>
+        <div class="product-quick-copy">
+          <p class="section-kicker gold">Olympic Paints</p>
+          <h2 id="quick-view-title" data-quick-title>Product</h2>
+          <p data-quick-category></p>
+          <p class="product-quick-story" data-quick-story></p>
+          <div class="product-quick-specs">
+            <span>Curated colour range</span>
+            <span>Manufactured in South Africa</span>
+            <span>Finish and coverage guidance</span>
+          </div>
+          <p class="product-quick-note">Choose the size that fits your project, then continue to the bag. Atlas can help confirm surface preparation and colour direction before checkout.</p>
+          <div class="product-quick-actions">
+            <button class="button primary" type="button" data-quick-add>Add selected size to bag</button>
+            <a class="text-link" href="contact.html#atlas">Ask Atlas first</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Olympic Paints home"><img src="assests/images/logo.png" alt="Olympic Paints" /></a>
+          <p>Olympic Paints blends simple lines, honest materials, and refined details to create interiors that feel calm, personal, and grounded. Since 1981.</p>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="colour-collections.html">Colours</a><a href="products.html">Products</a><a href="inspiration.html">Inspiration</a></div>
+        <div class="footer-col"><h4>Explore</h4><a href="colour-cafe.html">Colour Cafe</a><a href="our-story.html">Our Story</a><a href="find-a-store.html">Find a Store</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Get in Touch</h4><a href="tel:+27118571045">(011) 857 1045</a><a href="mailto:info@olympicpaints.co.za">info@olympicpaints.co.za</a><p style="color:var(--muted);font-size:0.84rem;line-height:1.6;margin-top:8px">28 Mecca Rd, Lenasia, 1827<br>Gauteng, South Africa</p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Olympic Paints. All rights reserved.</p><div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a></div></div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Complete your Olympic Paints bag with delivery details, contact information and order summary." />
+    <title>Checkout | Olympic Paints</title>
+    <link rel="canonical" href="https://olympic-paints.vercel.app/checkout.html" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-shell">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="mobile-brand" href="index.html" aria-label="Olympic Paints home">
+        <img src="assests/images/logo.png" alt="Olympic Paints" />
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <div class="nav-group nav-left">
+          <a href="our-story.html">Our Story</a>
+          <a href="colour-cafe.html">Colour Cafe</a>
+          <a href="products.html">Products</a>
+        </div>
+        <a class="brand" href="index.html" aria-label="Olympic Paints home">
+          <img src="assests/images/logo.png" alt="Olympic Paints" />
+        </a>
+        <div class="nav-group nav-right">
+          <a href="colour-collections.html">Collections</a>
+          <a href="inspiration.html">Inspiration</a>
+          <a href="find-a-store.html">Find a Store</a>
+          <button class="cart-toggle" data-open-cart aria-label="Open shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="cart-badge">0</span>
+          </button>
+        </div>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="page-hero reveal">
+        <p class="section-kicker">Secure Checkout</p>
+        <h1>Complete your bag.</h1>
+        <p>Review your Olympic Paints selection and add the details we need to prepare your order with care.</p>
+      </section>
+
+      <section class="checkout-layout">
+        <form class="checkout-form-section reveal" id="checkout-form">
+          <div class="checkout-progress" aria-label="Checkout progress">
+            <span class="is-active">Bag</span>
+            <span class="is-active">Details</span>
+            <span>Payment</span>
+            <span>Confirm</span>
+          </div>
+          <h2>Delivery details</h2>
+
+          <h3>Contact information</h3>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="firstName" autocomplete="given-name" required />
+            </div>
+            <div class="form-field">
+              <label for="last-name">Last name</label>
+              <input id="last-name" name="lastName" autocomplete="family-name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+            </div>
+          </div>
+
+          <h3>Delivery address</h3>
+          <div class="form-row full">
+            <div class="form-field">
+              <label for="address">Street address</label>
+              <input id="address" name="address" autocomplete="street-address" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="city">City</label>
+              <input id="city" name="city" autocomplete="address-level2" required />
+            </div>
+            <div class="form-field">
+              <label for="province">Province</label>
+              <select id="province" name="province" autocomplete="address-level1" required>
+                <option value="">Select province</option>
+                <option>Eastern Cape</option>
+                <option>Free State</option>
+                <option>Gauteng</option>
+                <option>KwaZulu-Natal</option>
+                <option>Limpopo</option>
+                <option>Mpumalanga</option>
+                <option>North West</option>
+                <option>Northern Cape</option>
+                <option>Western Cape</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="postal-code">Postal code</label>
+              <input id="postal-code" name="postalCode" autocomplete="postal-code" required />
+            </div>
+            <div class="form-field">
+              <label for="delivery-method">Delivery method</label>
+              <select id="delivery-method" name="deliveryMethod" required>
+                <option>Courier delivery</option>
+                <option>Collect from nearest partner store</option>
+                <option>Colour Cafe collection</option>
+              </select>
+            </div>
+          </div>
+
+          <h3>Payment</h3>
+          <input type="hidden" id="payment-method" name="paymentMethod" value="Card payment" data-payment-value />
+          <div class="payment-selector" role="radiogroup" aria-label="Choose payment method">
+            <button type="button" class="payment-option is-selected" data-payment-choice="Card payment" aria-pressed="true">
+              <span>Card</span>
+              <strong>Pay securely online</strong>
+            </button>
+            <button type="button" class="payment-option" data-payment-choice="EFT request" aria-pressed="false">
+              <span>EFT</span>
+              <strong>Receive banking details</strong>
+            </button>
+            <button type="button" class="payment-option" data-payment-choice="Pay on collection" aria-pressed="false">
+              <span>Collection</span>
+              <strong>Pay at Colour Cafe</strong>
+            </button>
+          </div>
+          <div class="payment-panels">
+            <div class="payment-panel is-active" data-payment-panel="Card payment">
+              <div class="form-row full">
+                <div class="form-field">
+                  <label for="card-number">Card number</label>
+                  <input id="card-number" name="cardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="card-expiry">Expiry</label>
+                  <input id="card-expiry" name="cardExpiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" />
+                </div>
+                <div class="form-field">
+                  <label for="card-cvc">CVC</label>
+                  <input id="card-cvc" name="cardCvc" inputmode="numeric" autocomplete="cc-csc" placeholder="123" />
+                </div>
+              </div>
+              <p class="payment-note">This prototype simulates a secure card flow. No payment is processed.</p>
+            </div>
+            <div class="payment-panel" data-payment-panel="EFT request">
+              <p class="payment-note strong">Olympic Paints will reserve your bag and email a pro forma invoice with EFT banking details.</p>
+              <p class="payment-note">Orders are prepared once proof of payment is received.</p>
+            </div>
+            <div class="payment-panel" data-payment-panel="Pay on collection">
+              <div class="form-row full">
+                <div class="form-field">
+                  <label for="collection-point">Collection point</label>
+                  <select id="collection-point" name="collectionPoint">
+                    <option>Colour Cafe - Centurion Mall</option>
+                    <option>Colour Cafe - Mall of the South</option>
+                    <option>Nearest Olympic Paints partner store</option>
+                  </select>
+                </div>
+              </div>
+              <p class="payment-note">Your order will be held for collection and payment at the selected location.</p>
+            </div>
+          </div>
+          <div class="payment-methods" aria-label="Supported payment methods">
+            <span>Visa</span>
+            <span>Mastercard</span>
+            <span>EFT</span>
+            <span>Collection</span>
+          </div>
+
+          <button class="checkout-submit" type="submit" data-checkout-submit>Place Order</button>
+        </form>
+
+        <aside class="checkout-summary reveal" aria-label="Order summary">
+          <h3>Your order</h3>
+          <div id="checkout-items"></div>
+          <div class="checkout-totals" aria-live="polite">
+            <div class="checkout-totals-row">
+              <span>Subtotal</span>
+              <strong id="checkout-subtotal">R 0</strong>
+            </div>
+            <div class="checkout-totals-row">
+              <span>Shipping</span>
+              <strong id="checkout-shipping">R 150</strong>
+            </div>
+            <div class="checkout-totals-row total">
+              <span>Total</span>
+              <strong id="checkout-total">R 150</strong>
+            </div>
+          </div>
+          <p style="margin-top:16px;color:var(--muted);font-size:0.84rem;line-height:1.6">Free delivery applies on orders over R 1,500. A consultant may contact you if your selection needs special handling.</p>
+        </aside>
+      </section>
+    </main>
+
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="cart-drawer-panel">
+        <div class="cart-drawer-header">
+          <h3>Your Bag</h3>
+          <button class="cart-close" data-close-cart aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-drawer-body">
+          <div class="cart-empty" id="cart-empty">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <p style="font-weight:600;margin-bottom:4px">Your bag is empty</p>
+            <p style="font-size:0.82rem">Add something beautiful to get started.</p>
+          </div>
+          <div id="cart-items"></div>
+        </div>
+        <div class="cart-drawer-footer" id="cart-footer" style="display:none">
+          <div class="cart-subtotal-row">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">R 0</strong>
+          </div>
+          <p class="cart-free-shipping">Free shipping on orders over R 1,500</p>
+          <a href="checkout.html" class="cart-checkout-btn">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Olympic Paints home"><img src="assests/images/logo.png" alt="Olympic Paints" /></a>
+          <p>Olympic Paints blends simple lines, honest materials, and refined details to create interiors that feel calm, personal, and grounded. Since 1981.</p>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="colour-collections.html">Colours</a><a href="products.html">Products</a><a href="inspiration.html">Inspiration</a></div>
+        <div class="footer-col"><h4>Explore</h4><a href="colour-cafe.html">Colour Cafe</a><a href="our-story.html">Our Story</a><a href="find-a-store.html">Find a Store</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Get in Touch</h4><a href="tel:+27118571045">(011) 857 1045</a><a href="mailto:info@olympicpaints.co.za">info@olympicpaints.co.za</a><p style="color:var(--muted);font-size:0.84rem;line-height:1.6;margin-top:8px">28 Mecca Rd, Lenasia, 1827<br>Gauteng, South Africa</p></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Olympic Paints. All rights reserved.</p><div class="footer-legal"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a></div></div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

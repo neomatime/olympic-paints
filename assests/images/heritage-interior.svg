@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Warm South African-inspired interior</title>
+  <desc id="desc">A calm interior scene with warm walls, a sofa, natural light, timber furniture and plants.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f0e3d2"/>
+      <stop offset="1" stop-color="#b99a7f"/>
+    </linearGradient>
+    <linearGradient id="light" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff7df" stop-opacity=".86"/>
+      <stop offset="1" stop-color="#fff7df" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#efe7dc"/>
+  <rect y="0" width="1600" height="620" fill="url(#wall)"/>
+  <polygon points="1000,0 1600,0 1600,900 1260,900" fill="url(#light)" opacity=".7"/>
+  <rect x="0" y="620" width="1600" height="280" fill="#d6c4b1"/>
+  <g opacity=".42" stroke="#8c7665" stroke-width="3">
+    <path d="M0 700h1600M0 780h1600M0 860h1600"/>
+    <path d="M150 620l-90 280M370 620l-45 280M610 620l-10 280M850 620l35 280M1120 620l75 280M1390 620l120 280"/>
+  </g>
+  <rect x="192" y="170" width="340" height="245" rx="6" fill="#493b33"/>
+  <rect x="214" y="192" width="296" height="201" fill="#ece0d1"/>
+  <rect x="245" y="222" width="88" height="138" fill="#c4654a"/>
+  <rect x="356" y="222" width="122" height="138" fill="#7e9b72"/>
+  <rect x="1060" y="128" width="300" height="360" rx="8" fill="#3a2e28"/>
+  <rect x="1084" y="152" width="252" height="312" fill="#f8ead1"/>
+  <path d="M1090 455L1332 155" stroke="#fff9ec" stroke-width="34" opacity=".45"/>
+  <rect x="330" y="510" width="680" height="150" rx="34" fill="#6f665d"/>
+  <rect x="405" y="430" width="225" height="145" rx="28" fill="#7e9b72"/>
+  <rect x="640" y="430" width="225" height="145" rx="28" fill="#b99a7f"/>
+  <rect x="515" y="650" width="360" height="85" rx="16" fill="#8b674b"/>
+  <rect x="570" y="605" width="250" height="70" rx="8" fill="#a8835f"/>
+  <circle cx="1260" cy="610" r="58" fill="#7e9b72"/>
+  <rect x="1235" y="655" width="52" height="110" rx="8" fill="#8b674b"/>
+  <path d="M1238 600c-76-90-40-170 25-210 60 70 64 142-25 210zM1285 608c72-70 165-43 205 20-78 44-145 41-205-20z" fill="#68775d"/>
+  <circle cx="940" cy="598" r="22" fill="#d4a745"/>
+  <circle cx="990" cy="588" r="16" fill="#c4654a"/>
+</svg>

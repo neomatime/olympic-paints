@@ -1,0 +1,10 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local tooling (preview server config with machine-specific paths)
+.claude/
+
+# Dependencies (none committed; static site)
+node_modules/
