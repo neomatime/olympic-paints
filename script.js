@@ -588,30 +588,11 @@ function initIntroCurtain() {
   sessionStorage.setItem("op_intro", "1");
   document.body.classList.add("has-intro");
 
-  // The hero must be waiting underneath when the curtain lifts
+  // Keep the hero waiting underneath while the brand reveal plays.
   window.scrollTo(0, 0);
 
-  // Measure where the header brand sits so the coin can dock onto it.
-  // Desktop shows the centered .brand; <=1024px shows .mobile-brand.
-  // Deferred so the header's height transition has settled, and measured
-  // against clientWidth/Height (the curtain's box excludes the scrollbar).
-  setTimeout(() => {
-    const coin = intro.querySelector(".intro-coin");
-    const brandTarget = [...document.querySelectorAll(".site-header .mobile-brand, .site-header .site-nav .brand")]
-      .find((el) => getComputedStyle(el).display !== "none");
-
-    if (!coin || !brandTarget) return;
-    const rect = brandTarget.getBoundingClientRect();
-    const coinSize = coin.offsetWidth || 96;
-    const dx = rect.left + rect.width / 2 - document.documentElement.clientWidth / 2;
-    const dy = rect.top + rect.height / 2 - document.documentElement.clientHeight / 2;
-    intro.style.setProperty("--coin-dx", dx.toFixed(1) + "px");
-    intro.style.setProperty("--coin-dy", dy.toFixed(1) + "px");
-    intro.style.setProperty("--coin-scale", (rect.width / coinSize).toFixed(3));
-  }, 1200);
-
-  const lastSlat = intro.querySelector(".intro-slats span:last-child");
   let lifted = false;
+  let timer;
 
   const onEscape = (event) => {
     if (event.key === "Escape") lift();
@@ -624,12 +605,11 @@ function initIntroCurtain() {
     document.removeEventListener("keydown", onEscape);
     document.body.classList.add("intro-done");
     const cleanup = () => intro.remove();
-    if (lastSlat) lastSlat.addEventListener("transitionend", cleanup, { once: true });
-    setTimeout(cleanup, 1800); // safety net
+    intro.addEventListener("transitionend", cleanup, { once: true });
+    setTimeout(cleanup, 1000);
   }
 
-  // Coin docks on the header brand ~3.32s; slats lift right after
-  const timer = setTimeout(lift, 3380);
+  timer = setTimeout(lift, 2350);
 
   intro.querySelector("[data-skip-intro]")?.addEventListener("click", lift);
   document.addEventListener("keydown", onEscape);
