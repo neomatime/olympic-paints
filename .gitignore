@@ -8,3 +8,5 @@ desktop.ini
 
 # Dependencies (none committed; static site)
 node_modules/
+
+.vercel
