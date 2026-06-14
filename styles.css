@@ -5120,28 +5120,6 @@ body.intro-done .intro-scene { opacity: 0; }
   to { transform: scaleY(1); }
 }
 
-.intro-brush {
-  position: absolute;
-  z-index: 4;
-  left: 50%;
-  top: 50%;
-  width: clamp(104px, 13vw, 128px);
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  transform-origin: center top;
-  will-change: transform, opacity;
-  filter: drop-shadow(-2px 8px 12px rgba(17,17,17,0.22));
-  animation: introBrush 840ms cubic-bezier(0.6, 0, 0.32, 1) 2500ms both;
-}
-
-/* Bristles lead upward (already top of the SVG), brush exits past the top
-   edge as the coin docks and the slats take over. */
-@keyframes introBrush {
-  0%   { opacity: 0; transform: translate(-50%, -50%) translateY(64px) scaleY(0.9); }
-  14%  { opacity: 1; transform: translate(-50%, -50%) translateY(40px) scaleY(1); }
-  100% { opacity: 1; transform: translate(-50%, -50%) translateY(calc(-50vh - 150px)); }
-}
-
 /* --- Skip control ------------------------------------------------ */
 .intro-skip {
   position: absolute;
@@ -5179,7 +5157,6 @@ body.intro-done .intro-scene { opacity: 0; }
   .intro-splash { width: 90vw; }
   .intro-coin { width: 80px; height: 80px; }
   .intro-trail { width: 84px; margin-left: -42px; }
-  .intro-brush { width: 100px; }
 }
 
 /* Hold hero entrance until the curtain lifts */
