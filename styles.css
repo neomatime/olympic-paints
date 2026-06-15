@@ -5654,3 +5654,84 @@ body.has-intro:not(.intro-done) .hero-actions {
   .reveal.media-reveal { clip-path: none; }
   .button::before { display: none; }
 }
+
+/* ================================================================
+   OUR STORY — Gallery (offset image cluster)
+   ================================================================ */
+.story-gallery {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(56px, 9vw, 120px) 0;
+}
+
+.story-gallery-copy h2 {
+  margin-bottom: 16px;
+  font-size: clamp(2.2rem, 4.4vw, 3.9rem);
+  line-height: 1;
+}
+
+.story-gallery-copy p:not(.section-kicker) {
+  max-width: 360px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Stage: % positioning inside a fixed-ratio box so the cluster scales */
+.story-gallery-stage {
+  position: relative;
+  aspect-ratio: 1 / 0.92;
+}
+
+.story-gallery-panel {
+  position: absolute;
+  top: 4%;
+  right: 0;
+  width: 74%;
+  height: 86%;
+  background: var(--linen);
+  border-radius: var(--radius-lg);
+}
+
+.story-gallery-item {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: 0 26px 60px rgba(17, 17, 17, 0.16);
+  transition: transform 520ms var(--ease), box-shadow 520ms var(--ease);
+}
+
+.story-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-gallery-item.g1 { left: 0;   top: 12%;   width: 50%; aspect-ratio: 3/4; z-index: 2; }
+.story-gallery-item.g2 { right: 2%; top: 0;     width: 44%; aspect-ratio: 4/5; z-index: 1; }
+.story-gallery-item.g3 { left: 38%; bottom: 2%; width: 36%; aspect-ratio: 1/1; z-index: 3; }
+
+.story-gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 34px 74px rgba(17, 17, 17, 0.22);
+}
+
+@media (max-width: 900px) {
+  .story-gallery { grid-template-columns: 1fr; }
+  .story-gallery-copy p:not(.section-kicker) { max-width: 520px; }
+  .story-gallery-stage { aspect-ratio: 1 / 0.78; max-width: 560px; }
+}
+
+@media (max-width: 640px) {
+  .story-gallery { width: min(100% - 32px, 1240px); }
+  .story-gallery-stage { aspect-ratio: 1 / 0.95; }
+}
