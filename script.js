@@ -588,30 +588,32 @@ function initIntroCurtain() {
   sessionStorage.setItem("op_intro", "1");
   document.body.classList.add("has-intro");
 
-  // Keep the hero waiting underneath while the brand reveal plays.
+  // Keep the hero waiting underneath while the iris reveal plays.
   window.scrollTo(0, 0);
 
-  let lifted = false;
-  let timer;
+  let done = false;
+  let settleTimer;
+  let removeTimer;
 
   const onEscape = (event) => {
-    if (event.key === "Escape") lift();
+    if (event.key === "Escape") finish();
   };
 
-  function lift() {
-    if (lifted) return;
-    lifted = true;
-    clearTimeout(timer);
+  function finish() {
+    if (done) return;
+    done = true;
+    clearTimeout(settleTimer);
     document.removeEventListener("keydown", onEscape);
+    // Release the hero and fade away whatever remains of the curtain.
     document.body.classList.add("intro-done");
-    const cleanup = () => intro.remove();
-    intro.addEventListener("transitionend", cleanup, { once: true });
-    setTimeout(cleanup, 1000);
+    clearTimeout(removeTimer);
+    removeTimer = setTimeout(() => intro.remove(), 650);
   }
 
-  timer = setTimeout(lift, 2350);
+  // Logo settles (~1s), iris opens (~1.88s); release + clean up just after.
+  settleTimer = setTimeout(finish, 1880);
 
-  intro.querySelector("[data-skip-intro]")?.addEventListener("click", lift);
+  intro.querySelector("[data-skip-intro]")?.addEventListener("click", finish);
   document.addEventListener("keydown", onEscape);
 }
 
