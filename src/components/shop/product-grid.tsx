@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ProductCard } from "./product-card";
 import { cn } from "@/lib/utils";
 import type { Product, ProductCategory } from "@/types";
@@ -15,8 +16,29 @@ const filters: FilterOption[] = [
   { value: "equipment", label: "Equipment" },
 ];
 
-export function ProductGrid({ products, initialFilter }: { products: Product[]; initialFilter?: string }) {
-  const [activeFilter, setActiveFilter] = useState<string>(initialFilter || "all");
+const validCategories = new Set(filters.map((f) => f.value));
+
+export function ProductGrid({ products }: { products: Product[] }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const requested = searchParams.get("category");
+  const activeFilter = requested && validCategories.has(requested as ProductCategory | "all") ? requested : "all";
+
+  const setFilter = useCallback(
+    (value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (value === "all") {
+        params.delete("category");
+      } else {
+        params.set("category", value);
+      }
+      const query = params.toString();
+      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    },
+    [pathname, router, searchParams]
+  );
 
   const filtered = activeFilter === "all" ? products : products.filter((p) => p.category === activeFilter);
 
@@ -27,7 +49,7 @@ export function ProductGrid({ products, initialFilter }: { products: Product[]; 
           <button
             key={f.value}
             type="button"
-            onClick={() => setActiveFilter(f.value)}
+            onClick={() => setFilter(f.value)}
             aria-pressed={activeFilter === f.value}
             className={cn(
               "px-5 py-2 text-sm rounded-full border transition-colors",

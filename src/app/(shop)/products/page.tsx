@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/page-hero";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
@@ -10,13 +11,7 @@ export const metadata: Metadata = {
     "Shop Olympic Paints interior, exterior, specialist and equipment products, from PlatinumPlus finishes to roller kits and sample pots.",
 };
 
-type ProductsPageProps = {
-  searchParams: Promise<{ category?: string }>;
-};
-
-export default async function ProductsPage({ searchParams }: ProductsPageProps) {
-  const { category } = await searchParams;
-
+export default function ProductsPage() {
   return (
     <>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Products" }]} />
@@ -28,7 +23,9 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       />
 
       <section className="py-16 md:py-24 px-6 max-w-6xl mx-auto">
-        <ProductGrid products={products} initialFilter={category} />
+        <Suspense fallback={<div aria-hidden="true" className="min-h-[40vh]" />}>
+          <ProductGrid products={products} />
+        </Suspense>
       </section>
     </>
   );
