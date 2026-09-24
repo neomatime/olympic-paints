@@ -31,9 +31,9 @@ export function CafePrimer() {
         ))}
       </div>
       <ScrollReveal className="flex gap-4 mt-12 items-center">
-        <Link href="/colour-cafe">
-          <Button variant="secondary">Understand Colour Cafe</Button>
-        </Link>
+        <Button href="/colour-cafe" variant="secondary">
+          Understand Colour Cafe
+        </Button>
         <Link
           href="/contact#atlas"
           className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-olympic-yellow transition-colors"

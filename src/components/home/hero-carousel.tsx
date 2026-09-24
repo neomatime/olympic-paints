@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -74,12 +73,12 @@ export function HeroCarousel() {
           confidence.
         </p>
         <div className="flex gap-4 mt-8">
-          <Link href="/contact#atlas">
-            <Button variant="primary">Book a Colour Cafe consultation</Button>
-          </Link>
-          <Link href="/colour-collections">
-            <Button variant="outline">Explore colours</Button>
-          </Link>
+          <Button href="/contact#atlas" variant="primary">
+            Book a Colour Cafe consultation
+          </Button>
+          <Button href="/collections" variant="outline">
+            Explore colours
+          </Button>
         </div>
       </div>
 

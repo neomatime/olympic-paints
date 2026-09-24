@@ -82,9 +82,13 @@ export function ContactPageClient() {
             style direction, timeline, location and preferred appointment format. Atlas is arriving soon &mdash; for
             now, start your request below and our team will follow up directly.
           </p>
-          <Link href="mailto:info@olympicpaints.co.za?subject=Design%20consultation%20request" className="inline-block mt-8">
-            <Button variant="primary">Start with Atlas</Button>
-          </Link>
+          <Button
+            href="mailto:info@olympicpaints.co.za?subject=Design%20consultation%20request"
+            className="mt-8"
+            variant="primary"
+          >
+            Start with Atlas
+          </Button>
         </ScrollReveal>
       </section>
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
@@ -109,9 +108,9 @@ export default function OurStoryPage() {
             title="Moments that shape our story."
             description="People, spaces and the colour work behind Olympic Paints."
           />
-          <Link href="/colour-cafe" className="inline-block mt-6">
-            <Button variant="secondary">Visit the Colour Cafe</Button>
-          </Link>
+          <Button href="/colour-cafe" className="mt-6" variant="secondary">
+            Visit the Colour Cafe
+          </Button>
         </ScrollReveal>
         <ImageGallery
           className="mt-12"

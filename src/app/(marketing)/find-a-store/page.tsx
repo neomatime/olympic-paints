@@ -78,11 +78,9 @@ export default function FindAStorePage() {
                   </div>
                 </dl>
                 <div className="mt-6 flex flex-col gap-3">
-                  <Link href="/contact">
-                    <Button variant="primary" className="w-full">
-                      Book a consultation
-                    </Button>
-                  </Link>
+                  <Button href="/contact" variant="primary" className="w-full">
+                    Book a consultation
+                  </Button>
                   <Link href="/colour-cafe" className="text-sm font-medium text-center hover:underline">
                     Explore the Colour Cafe
                   </Link>
@@ -115,9 +113,9 @@ export default function FindAStorePage() {
             Get in touch and we will help you choose the right Colour Cafe, prepare your brief and route your project
             to the right design support.
           </p>
-          <Link href="/contact#atlas" className="inline-block mt-8">
-            <Button variant="primary">Start with Atlas</Button>
-          </Link>
+          <Button href="/contact#atlas" className="mt-8" variant="primary">
+            Start with Atlas
+          </Button>
         </ScrollReveal>
       </section>
     </>

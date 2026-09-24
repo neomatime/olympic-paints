@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useCart } from "@/context/cart-context";
 import { formatPrice, cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -109,16 +108,12 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
               <span>Subtotal</span>
               <span>{formatPrice(total)}</span>
             </div>
-            <Link href="/cart" onClick={onClose}>
-              <Button variant="secondary" className="w-full mb-3">
-                View Bag
-              </Button>
-            </Link>
-            <Link href="/checkout" onClick={onClose}>
-              <Button variant="primary" className="w-full">
-                Checkout
-              </Button>
-            </Link>
+            <Button href="/cart" onClick={onClose} variant="secondary" className="w-full mb-3">
+              View Bag
+            </Button>
+            <Button href="/checkout" onClick={onClose} variant="primary" className="w-full">
+              Checkout
+            </Button>
           </div>
         )}
       </aside>

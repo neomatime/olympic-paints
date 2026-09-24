@@ -56,12 +56,12 @@ export default function ColourCafePage() {
             through a design consultation with us.
           </p>
           <div className="flex flex-wrap gap-4 mt-8">
-            <Link href="/contact#atlas">
-              <Button variant="primary">Book a design consultation</Button>
-            </Link>
-            <Link href="#gallery">
-              <Button variant="ghost">View the gallery</Button>
-            </Link>
+            <Button href="/contact#atlas" variant="primary">
+              Book a design consultation
+            </Button>
+            <Button href="#gallery" variant="ghost">
+              View the gallery
+            </Button>
           </div>
         </ScrollReveal>
         <ScrollReveal delay={1} className="relative aspect-[4/3] rounded-sm overflow-hidden">
@@ -174,9 +174,9 @@ export default function ColourCafePage() {
             Atlas will collect the details your designer needs before your Colour Cafe appointment, whether you are
             shaping a home, studio, office, store, hospitality space or a custom creative brief.
           </p>
-          <Link href="/contact#atlas" className="inline-block mt-8">
-            <Button variant="primary">Book with Atlas</Button>
-          </Link>
+          <Button href="/contact#atlas" className="mt-8" variant="primary">
+            Book with Atlas
+          </Button>
         </ScrollReveal>
       </section>
     </>

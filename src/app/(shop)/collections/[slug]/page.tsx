@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { PageHero } from "@/components/shared/page-hero";
@@ -83,9 +82,9 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         )}
 
         <div className="mt-16 text-center">
-          <Link href={`/products`} className="inline-block">
-            <Button variant="primary">Shop Products in This Palette</Button>
-          </Link>
+          <Button href="/products" variant="primary">
+            Shop Products in This Palette
+          </Button>
         </div>
       </section>
     </>

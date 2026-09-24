@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
@@ -54,11 +53,9 @@ export default function StudioPage() {
                 <p className="text-xs font-bold tracking-[0.16em] uppercase text-olympic-yellow">{tool.status}</p>
                 <h3 className="mt-4">{tool.title}</h3>
                 <p className="mt-3 text-sm text-muted leading-relaxed flex-1">{tool.description}</p>
-                <Link href={tool.href} className="mt-6">
-                  <Button variant="ghost" className="w-full">
-                    {tool.cta}
-                  </Button>
-                </Link>
+                <Button href={tool.href} className="mt-6 w-full" variant="ghost">
+                  {tool.cta}
+                </Button>
               </article>
             </ScrollReveal>
           ))}

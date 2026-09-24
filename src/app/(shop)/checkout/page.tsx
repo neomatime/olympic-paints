@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Link from "next/link";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { PageHero } from "@/components/shared/page-hero";
 import { Input } from "@/components/ui/input";
@@ -48,9 +47,9 @@ export default function CheckoutPage() {
             Your order has been placed successfully. This is a demo checkout, so no payment has actually been
             processed and no order will be shipped.
           </p>
-          <Link href="/products" className="inline-block mt-8">
-            <Button variant="primary">Continue Shopping</Button>
-          </Link>
+          <Button href="/products" className="mt-8" variant="primary">
+            Continue Shopping
+          </Button>
         </section>
       </>
     );
@@ -63,9 +62,9 @@ export default function CheckoutPage() {
         <section className="py-24 px-6 max-w-2xl mx-auto text-center">
           <h1>Your bag is empty.</h1>
           <p className="mt-4 text-muted">Add some products before checking out.</p>
-          <Link href="/products" className="inline-block mt-8">
-            <Button variant="primary">Shop Products</Button>
-          </Link>
+          <Button href="/products" className="mt-8" variant="primary">
+            Shop Products
+          </Button>
         </section>
       </>
     );

@@ -20,9 +20,9 @@ export default function CartPage() {
         {items.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-muted mb-8">Your bag is empty.</p>
-            <Link href="/products">
-              <Button variant="primary">Continue Shopping</Button>
-            </Link>
+            <Button href="/products" variant="primary">
+              Continue Shopping
+            </Button>
           </div>
         ) : (
           <>
@@ -80,16 +80,12 @@ export default function CartPage() {
                 <p className="text-2xl font-medium">{formatPrice(total)}</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <Link href="/products" className="sm:order-1">
-                  <Button variant="ghost" className="w-full">
-                    Continue Shopping
-                  </Button>
-                </Link>
-                <Link href="/checkout" className="sm:order-2">
-                  <Button variant="primary" className="w-full">
-                    Proceed to Checkout
-                  </Button>
-                </Link>
+                <Button href="/products" className="w-full sm:order-1" variant="ghost">
+                  Continue Shopping
+                </Button>
+                <Button href="/checkout" className="w-full sm:order-2" variant="primary">
+                  Proceed to Checkout
+                </Button>
               </div>
             </div>
           </>

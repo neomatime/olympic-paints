@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
@@ -73,9 +72,9 @@ export function DiscoverySection() {
             <span className="text-xs text-muted uppercase tracking-wider">Recommended next step</span>
             <h3 className="mt-3">{active.recommendation}</h3>
             <p className="mt-3 text-sm text-muted leading-relaxed">{active.detail}</p>
-            <Link href="/contact#atlas" className="mt-6 inline-block">
-              <Button variant="primary">Continue with Atlas</Button>
-            </Link>
+            <Button href="/contact#atlas" className="mt-6" variant="primary">
+              Continue with Atlas
+            </Button>
           </div>
         </div>
       </section>
