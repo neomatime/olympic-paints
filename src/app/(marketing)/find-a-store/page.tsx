@@ -43,9 +43,11 @@ export default function FindAStorePage() {
                 <h2>{store.name}</h2>
                 <dl className="mt-4 space-y-2 text-sm text-muted">
                   <div>
-                    <dt className="font-medium text-ink/70">Address</dt>
+                    <dt className="font-medium text-ink/70">{store.address ? "Address" : "Location"}</dt>
                     <dd>
-                      {store.address}, {store.city}, {store.province} {store.postalCode}
+                      {store.address
+                        ? `${store.address}, ${store.city}, ${store.province} ${store.postalCode ?? ""}`.trim()
+                        : `${store.city}, ${store.province}. Call or email us for directions and trading hours.`}
                     </dd>
                   </div>
                   <div>
@@ -64,18 +66,20 @@ export default function FindAStorePage() {
                       </a>
                     </dd>
                   </div>
-                  <div>
-                    <dt className="font-medium text-ink/70">Hours</dt>
-                    <dd>
-                      <ul className="space-y-0.5">
-                        {store.hours.map((h) => (
-                          <li key={h.day}>
-                            {h.day}: {h.open === "Closed" ? "Closed" : `${h.open} - ${h.close}`}
-                          </li>
-                        ))}
-                      </ul>
-                    </dd>
-                  </div>
+                  {store.hours && (
+                    <div>
+                      <dt className="font-medium text-ink/70">Hours</dt>
+                      <dd>
+                        <ul className="space-y-0.5">
+                          {store.hours.map((h) => (
+                            <li key={h.day}>
+                              {h.day}: {h.open === "Closed" ? "Closed" : `${h.open} - ${h.close}`}
+                            </li>
+                          ))}
+                        </ul>
+                      </dd>
+                    </div>
+                  )}
                 </dl>
                 <div className="mt-6 flex flex-col gap-3">
                   <Button href="/contact" variant="primary" className="w-full">

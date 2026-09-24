@@ -74,14 +74,14 @@ export type TeamMember = {
 export type StoreLocation = {
   id: string;
   name: string;
-  address: string;
+  address?: string;
   city: string;
   province: string;
-  postalCode: string;
+  postalCode?: string;
   phone: string;
   email: string;
   coordinates: { lat: number; lng: number };
-  hours: { day: string; open: string; close: string }[];
+  hours?: { day: string; open: string; close: string }[];
 };
 
 export type NavItem = {

@@ -1,13 +1,8 @@
 import type { StoreLocation } from "@/types";
 
-// HQ address/phone/email extracted verbatim from the site footer (present on every page)
-// and contact.html. Hours are not published anywhere on the existing site, so standard
-// SA retail hours are used as a reasonable placeholder (flagged in the task report).
-// Centurion Mall and Mall of the South are named as "Now Open" Colour Cafe branches in
-// find-a-store.html, but that page gives no street address, phone, email or hours for
-// either branch — only the mall name and city. Coordinates below are the real,
-// publicly-known coordinates of those two shopping malls (approximate mall centroids),
-// not scraped from the site.
+// Centurion Mall address and hours are from its Google Business listing (2026-09-25).
+// Lenasia HQ hours are still placeholders — confirm with the client.
+// Mall of the South address/hours are omitted until confirmed; the store card hides them.
 export const storeLocations: StoreLocation[] = [
   {
     id: "lenasia-hq",
@@ -27,8 +22,8 @@ export const storeLocations: StoreLocation[] = [
   },
   {
     id: "centurion-mall",
-    name: "Olympic Paints Colour Cafe — Centurion Mall",
-    address: "Centurion Mall",
+    name: "Olympic Colour Cafe — Centurion Mall",
+    address: "Shop 312 F, Centurion Mall, 1269 Gordon Hood Rd",
     city: "Centurion",
     province: "Gauteng",
     postalCode: "0157",
@@ -36,23 +31,19 @@ export const storeLocations: StoreLocation[] = [
     email: "info@olympicpaints.co.za",
     coordinates: { lat: -25.8601, lng: 28.1875 },
     hours: [
-      { day: "Monday - Saturday", open: "09:00", close: "18:00" },
-      { day: "Sunday", open: "09:00", close: "15:00" },
+      { day: "Monday - Thursday", open: "09:00", close: "19:00" },
+      { day: "Friday", open: "09:00", close: "20:00" },
+      { day: "Saturday", open: "08:00", close: "18:00" },
+      { day: "Sunday", open: "09:00", close: "17:00" },
     ],
   },
   {
     id: "mall-of-the-south",
     name: "Olympic Paints Colour Cafe — Mall of the South",
-    address: "Mall of the South",
     city: "Johannesburg South",
     province: "Gauteng",
-    postalCode: "2091",
     phone: "(011) 857 1045",
     email: "info@olympicpaints.co.za",
     coordinates: { lat: -26.287, lng: 28.0743 },
-    hours: [
-      { day: "Monday - Saturday", open: "09:00", close: "18:00" },
-      { day: "Sunday", open: "09:00", close: "15:00" },
-    ],
   },
 ];
