@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -67,6 +67,7 @@ export function SiteHeader() {
   const { isScrolled } = useScroll();
   const { count } = useCart();
   const pathname = usePathname();
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
 
   return (
     <>
@@ -125,6 +126,7 @@ export function SiteHeader() {
 
         {/* Mobile menu toggle */}
         <button
+          ref={menuToggleRef}
           className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
@@ -137,7 +139,7 @@ export function SiteHeader() {
         </button>
       </header>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} triggerRef={menuToggleRef} />
     </>
   );
 }
