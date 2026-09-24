@@ -24,26 +24,28 @@ const slides = [
 
 export function HeroCarousel() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [hoverPaused, setHoverPaused] = useState(false);
+  const [manuallyPaused, setManuallyPaused] = useState(false);
   const prefersReduced = useReducedMotion();
+  const isPaused = hoverPaused || manuallyPaused || prefersReduced;
 
   const next = useCallback(() => {
     setActive((i) => (i + 1) % slides.length);
   }, []);
 
   useEffect(() => {
-    if (prefersReduced || paused || slides.length < 2) return;
+    if (isPaused || slides.length < 2) return;
     const timer = setInterval(next, 5600);
     return () => clearInterval(timer);
-  }, [prefersReduced, paused, next]);
+  }, [isPaused, next]);
 
   return (
     <section
       className="hero relative h-screen min-h-[600px] overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
+      onMouseEnter={() => setHoverPaused(true)}
+      onMouseLeave={() => setHoverPaused(false)}
+      onFocus={() => setHoverPaused(true)}
+      onBlur={() => setHoverPaused(false)}
     >
       {slides.map((slide, i) => (
         <div
@@ -82,19 +84,40 @@ export function HeroCarousel() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10" aria-label="Hero scenes">
-        {slides.map((slide, i) => (
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
+        <div className="flex gap-3" aria-label="Hero scenes">
+          {slides.map((slide, i) => (
+            <button
+              key={slide.image}
+              type="button"
+              onClick={() => setActive(i)}
+              className={cn(
+                "w-2.5 h-2.5 rounded-full transition-all",
+                i === active ? "bg-cream scale-125" : "bg-cream/40 hover:bg-cream/60"
+              )}
+              aria-label={`Show ${slide.label}`}
+            />
+          ))}
+        </div>
+        {!prefersReduced && slides.length > 1 && (
           <button
-            key={slide.image}
             type="button"
-            onClick={() => setActive(i)}
-            className={cn(
-              "w-2.5 h-2.5 rounded-full transition-all",
-              i === active ? "bg-cream scale-125" : "bg-cream/40 hover:bg-cream/60"
+            onClick={() => setManuallyPaused((p) => !p)}
+            className="w-7 h-7 rounded-full border border-cream/40 text-cream flex items-center justify-center hover:bg-cream/10 transition-colors"
+            aria-label={manuallyPaused ? "Play hero slideshow" : "Pause hero slideshow"}
+            aria-pressed={manuallyPaused}
+          >
+            {manuallyPaused ? (
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            ) : (
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+              </svg>
             )}
-            aria-label={`Show ${slide.label}`}
-          />
-        ))}
+          </button>
+        )}
       </div>
 
       <p className="absolute right-6 bottom-8 text-xs text-cream/30 hidden md:block" aria-hidden="true">

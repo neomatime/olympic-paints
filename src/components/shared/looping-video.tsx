@@ -1,0 +1,78 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { cn } from "@/lib/utils";
+
+type LoopingVideoProps = {
+  src: string;
+  poster: string;
+  label: string;
+  className?: string;
+};
+
+/**
+ * A muted, looping background-style video (e.g. "our people at work") that
+ * respects prefers-reduced-motion — it starts paused instead of
+ * autoplaying — and always exposes a visible pause/play control, since
+ * hover/focus alone isn't an accessible mechanism for touch or
+ * screen-reader users (WCAG 2.2.2).
+ */
+export function LoopingVideo({ src, poster, label, className }: LoopingVideoProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const prefersReduced = useReducedMotion();
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || prefersReduced) return;
+    video.play().catch(() => {});
+    setPlaying(true);
+  }, [prefersReduced]);
+
+  function toggle() {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play().catch(() => {});
+      setPlaying(true);
+    } else {
+      video.pause();
+      setPlaying(false);
+    }
+  }
+
+  return (
+    <div className={cn("relative", className)}>
+      <video
+        ref={videoRef}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={poster}
+        aria-label={label}
+        className="w-full rounded-sm"
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+      <button
+        type="button"
+        onClick={toggle}
+        className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-ink/60 text-cream flex items-center justify-center hover:bg-ink/80 transition-colors"
+        aria-label={playing ? "Pause video" : "Play video"}
+        aria-pressed={playing}
+      >
+        {playing ? (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+          </svg>
+        ) : (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        )}
+      </button>
+    </div>
+  );
+}

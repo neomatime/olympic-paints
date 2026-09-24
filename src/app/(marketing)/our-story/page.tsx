@@ -8,6 +8,7 @@ import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { team } from "@/data/team";
 import { LocalVideo } from "@/components/shared/local-video";
+import { LoopingVideo } from "@/components/shared/looping-video";
 
 export const metadata: Metadata = {
   title: "Our Story",
@@ -61,18 +62,11 @@ export default function OurStoryPage() {
           />
         </ScrollReveal>
         <ScrollReveal delay={1}>
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
+          <LoopingVideo
+            src="/videos/our-people.mp4"
             poster="/images/our-people-poster.jpg"
-            aria-label="The people of Olympic Paints"
-            className="w-full rounded-sm"
-          >
-            <source src="/videos/our-people.mp4" type="video/mp4" />
-          </video>
+            label="The people of Olympic Paints"
+          />
         </ScrollReveal>
       </section>
 
