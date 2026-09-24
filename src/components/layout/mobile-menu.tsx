@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type RefObject } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLeft, navRight } from "@/data/navigation";
@@ -18,6 +18,7 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
   const { count } = useCart();
   const containerRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -46,7 +47,9 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
       if (e.key !== "Tab") return;
       const container = containerRef.current;
       if (!container) return;
-      const focusable = container.querySelectorAll<HTMLElement>("a[href]");
+      const focusable = [...container.querySelectorAll<HTMLElement>("a[href], button")].filter(
+        (el) => el.offsetParent !== null
+      );
       if (focusable.length === 0) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
@@ -60,7 +63,10 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
     }
 
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      setExpanded(null);
+    };
   }, [open, onClose, triggerRef]);
 
   const allLinks = [...navLeft, ...navRight];
@@ -71,33 +77,78 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
       ref={containerRef}
       inert={!open}
       className={cn(
-        "fixed inset-0 z-40 bg-cream flex flex-col items-center justify-center gap-6 transition-all duration-500 md:hidden",
+        "fixed inset-0 z-40 bg-cream overflow-y-auto transition-all duration-500 md:hidden",
         open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       )}
       aria-hidden={!open}
     >
-      {allLinks.map((item, i) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          ref={i === 0 ? firstLinkRef : undefined}
-          className={cn(
+      <nav aria-label="Mobile" className="min-h-full flex flex-col items-center justify-center gap-6 px-6 py-24">
+        {allLinks.map((item, i) => {
+          const itemClass = cn(
             "text-2xl font-serif transition-all duration-500",
-            open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-          )}
-          style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
-          onClick={onClose}
-        >
-          {item.label}
+            open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          );
+          const itemStyle = { transitionDelay: open ? `${i * 60}ms` : "0ms" };
+
+          if (item.children) {
+            const isExpanded = expanded === item.href;
+            const submenuId = `mobile-submenu-${i}`;
+            return (
+              <div key={item.href} className="flex flex-col items-center">
+                <button
+                  type="button"
+                  aria-expanded={isExpanded}
+                  aria-controls={submenuId}
+                  onClick={() => setExpanded(isExpanded ? null : item.href)}
+                  className={cn(itemClass, "inline-flex items-center gap-2")}
+                  style={itemStyle}
+                >
+                  {item.label}
+                  <svg
+                    className={cn("w-4 h-4 transition-transform", isExpanded && "rotate-180")}
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 5l3 3 3-3" />
+                  </svg>
+                </button>
+                <ul id={submenuId} hidden={!isExpanded} className="mt-4 flex flex-col items-center gap-3">
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <Link
+                        href={child.href}
+                        className="text-base text-muted hover:text-ink transition-colors"
+                        onClick={onClose}
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          }
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              ref={i === 0 ? firstLinkRef : undefined}
+              className={itemClass}
+              style={itemStyle}
+              onClick={onClose}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
+        <Link href="/cart" className="text-lg text-muted mt-4" onClick={onClose}>
+          Cart {count > 0 && `(${count})`}
         </Link>
-      ))}
-      <Link
-        href="/cart"
-        className="text-lg text-muted mt-4"
-        onClick={onClose}
-      >
-        Cart {count > 0 && `(${count})`}
-      </Link>
+      </nav>
     </div>
   );
 }
