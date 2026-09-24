@@ -62,7 +62,7 @@ const jsonLd = {
 };
 
 const outfit = Outfit({
-  variable: "--font-family-sans",
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
