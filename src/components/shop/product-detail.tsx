@@ -10,6 +10,7 @@ import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { useCart } from "@/context/cart-context";
 import { formatPrice, cn } from "@/lib/utils";
 import type { Product } from "@/types";
+import { categoryLabel } from "@/data/categories";
 
 export function ProductDetail({ product }: { product: Product }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -80,7 +81,7 @@ export function ProductDetail({ product }: { product: Product }) {
 
         <ScrollReveal delay={1}>
           <p className="text-xs font-bold tracking-[0.16em] uppercase text-muted">
-            {product.category.charAt(0).toUpperCase() + product.category.slice(1)} Paint
+            {categoryLabel(product.category)}
             {product.finish ? ` — ${product.finish.charAt(0).toUpperCase()}${product.finish.slice(1)}` : ""}
           </p>
           <h1 className="mt-3">{product.name}</h1>

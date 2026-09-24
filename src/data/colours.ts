@@ -21,4 +21,6 @@ export const colours: ColourSwatch[] = [
   { id: "dusk-blue", name: "Dusk Blue", hex: "#6B8CAE", family: "cool" },
   { id: "studio-violet", name: "Studio Violet", hex: "#9B7CB5", family: "bold" },
   { id: "brushed-silver", name: "Brushed Silver", hex: "#C0C0C0", family: "neutral" },
+  // Hex approximated from the sample-pot photo on olympicpaints.co.za — confirm with the client.
+  { id: "suburban-bliss", name: "Suburban Bliss", hex: "#F2C9C4", family: "warm" },
 ];

@@ -1,4 +1,12 @@
-export type ProductCategory = 'interior' | 'exterior' | 'specialist' | 'equipment';
+export type ProductCategory =
+  | 'samples'
+  | 'enamels'
+  | 'preparation'
+  | 'pva'
+  | 'sealers'
+  | 'primers'
+  | 'multipurpose'
+  | 'general';
 export type ProductFinish = 'matt' | 'silk' | 'gloss' | 'eggshell' | 'suede';
 export type ColourFamily = 'warm' | 'cool' | 'neutral' | 'bold' | 'earth';
 export type RoomType = 'living-room' | 'bedroom' | 'kitchen' | 'bathroom' | 'kids-room' | 'outdoor';

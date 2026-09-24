@@ -4,16 +4,14 @@ import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ProductCard } from "./product-card";
 import { cn } from "@/lib/utils";
+import { productCategories } from "@/data/categories";
 import type { Product, ProductCategory } from "@/types";
 
 type FilterOption = { value: ProductCategory | "all"; label: string };
 
 const filters: FilterOption[] = [
   { value: "all", label: "All Products" },
-  { value: "interior", label: "Interior" },
-  { value: "exterior", label: "Exterior" },
-  { value: "specialist", label: "Specialty" },
-  { value: "equipment", label: "Equipment" },
+  ...productCategories.map((c) => ({ value: c.id, label: c.label })),
 ];
 
 const validCategories = new Set(filters.map((f) => f.value));

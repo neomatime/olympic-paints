@@ -1,4 +1,5 @@
 import type { NavItem } from "@/types";
+import { productCategories } from "./categories";
 
 // Extracted verbatim from <nav class="site-nav"> in the existing HTML (identical across
 // every page): nav-group.nav-left, then the brand, then nav-group.nav-right.
@@ -10,10 +11,8 @@ export const navLeft: NavItem[] = [
     href: "/products",
     children: [
       { label: "All Products", href: "/products" },
-      { label: "Interior", href: "/products?category=interior" },
-      { label: "Exterior", href: "/products?category=exterior" },
-      { label: "Specialty", href: "/products?category=specialist" },
-      { label: "Equipment", href: "/products?category=equipment" },
+      { label: "Our Colours", href: "/collections" },
+      ...productCategories.map((c) => ({ label: c.label, href: `/products?category=${c.id}` })),
     ],
   },
 ];

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/cart-context";
 import { formatPrice, cn } from "@/lib/utils";
 import type { Product } from "@/types";
+import { categoryLabel } from "@/data/categories";
 
 export function ProductCard({ product }: { product: Product }) {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
@@ -61,7 +62,7 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className="text-sm font-medium">{product.name}</h3>
       </Link>
       <p className="text-xs text-muted mt-1">
-        {product.category.charAt(0).toUpperCase() + product.category.slice(1)} Paint
+        {categoryLabel(product.category)}
       </p>
 
       {product.rating && (
