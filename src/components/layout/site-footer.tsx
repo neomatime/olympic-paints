@@ -36,13 +36,13 @@ export function SiteFooter() {
           <div className="flex flex-col gap-2 text-sm">
             <a href="tel:+27118571045" className="hover:text-cream transition-colors">(011) 857 1045</a>
             <a href="mailto:info@olympicpaints.co.za" className="hover:text-cream transition-colors">info@olympicpaints.co.za</a>
-            <p className="text-cream/30 text-xs leading-relaxed mt-2">
+            <p className="text-cream/60 text-xs leading-relaxed mt-2">
               28 Mecca Rd, Lenasia, 1827<br />Gauteng, South Africa
             </p>
           </div>
         </div>
       </div>
-      <div className="border-t border-cream/10 px-6 py-6 flex flex-col md:flex-row items-center justify-between text-xs text-cream/30 max-w-7xl mx-auto">
+      <div className="border-t border-cream/10 px-6 py-6 flex flex-col md:flex-row items-center justify-between text-xs text-cream/60 max-w-7xl mx-auto">
         <p>&copy; {new Date().getFullYear()} Olympic Paints. All rights reserved.</p>
         <div className="flex gap-6 mt-3 md:mt-0">
           <Link href="/privacy" className="hover:text-cream/60 transition-colors">Privacy</Link>

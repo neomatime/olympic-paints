@@ -2,17 +2,30 @@ import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
   eyebrow?: string;
-  eyebrowColor?: "default" | "gold" | "sage";
+  eyebrowColor?: "default" | "gold" | "gold-on-dark" | "sage";
   title: string;
   description?: string;
   className?: string;
   centered?: boolean;
 };
 
+// Text colour for the eyebrow label. "gold" keeps espresso text (yellow on
+// white/paper fails WCAG contrast at this size); the brand yellow lives on
+// the decorative rule instead, via ruleColors below. "gold-on-dark" is for
+// eyebrows sitting on an espresso/dark section background, where yellow
+// text is fine (~11.9:1) — use it there instead of "gold".
 const eyebrowColors = {
   default: "text-muted",
-  gold: "text-olympic-yellow",
+  gold: "text-espresso",
+  "gold-on-dark": "text-olympic-yellow",
   sage: "text-sage",
+};
+
+const ruleColors = {
+  default: "bg-current",
+  gold: "bg-olympic-yellow",
+  "gold-on-dark": "bg-olympic-yellow",
+  sage: "bg-current",
 };
 
 export function SectionHeading({ eyebrow, eyebrowColor = "default", title, description, className, centered }: SectionHeadingProps) {
@@ -24,7 +37,7 @@ export function SectionHeading({ eyebrow, eyebrowColor = "default", title, descr
           centered && "justify-center",
           eyebrowColors[eyebrowColor]
         )}>
-          <span className="w-6 h-px bg-current" aria-hidden="true" />
+          <span className={cn("w-6 h-px", ruleColors[eyebrowColor])} aria-hidden="true" />
           {eyebrow}
         </p>
       )}

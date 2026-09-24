@@ -87,7 +87,7 @@ export function ProductDetail({ product }: { product: Product }) {
 
           {product.rating && (
             <div className="flex items-center gap-2 mt-3 text-sm text-muted">
-              <span aria-hidden="true" className="text-olympic-yellow">
+              <span aria-hidden="true" className="text-espresso">
                 {"★".repeat(Math.round(product.rating.score))}
                 {"☆".repeat(5 - Math.round(product.rating.score))}
               </span>

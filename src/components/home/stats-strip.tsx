@@ -56,12 +56,12 @@ function AnimatedCounter({ target, suffix, label, delay }: StatItem & { delay: n
         <span className="text-4xl md:text-5xl font-serif">
           {target === 0 ? (
             <>
-              5.0 <span className="text-olympic-yellow">{"★"}</span>
+              5.0 <span className="text-espresso">{"★"}</span>
             </>
           ) : (
             <>
               {value.toLocaleString()}
-              <span className="text-olympic-yellow">{suffix}</span>
+              <span className="text-espresso">{suffix}</span>
             </>
           )}
         </span>

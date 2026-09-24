@@ -50,7 +50,7 @@ export default function StudioPage() {
           {tools.map((tool, i) => (
             <ScrollReveal key={tool.href} delay={i}>
               <article className="h-full flex flex-col border border-ink/10 rounded-sm p-8">
-                <p className="text-xs font-bold tracking-[0.16em] uppercase text-olympic-yellow">{tool.status}</p>
+                <p className="text-xs font-bold tracking-[0.16em] uppercase text-espresso">{tool.status}</p>
                 <h3 className="mt-4">{tool.title}</h3>
                 <p className="mt-3 text-sm text-muted leading-relaxed flex-1">{tool.description}</p>
                 <Button href={tool.href} className="mt-6 w-full" variant="ghost">

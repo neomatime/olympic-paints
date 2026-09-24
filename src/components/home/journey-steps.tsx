@@ -24,7 +24,7 @@ export function JourneySteps() {
         <ScrollReveal>
           <SectionHeading
             eyebrow="Guided Experience"
-            eyebrowColor="gold"
+            eyebrowColor="gold-on-dark"
             title="Your future home, designed in five calm steps."
             centered
           />

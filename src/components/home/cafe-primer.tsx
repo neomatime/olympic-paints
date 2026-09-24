@@ -23,7 +23,7 @@ export function CafePrimer() {
         {steps.map((step, i) => (
           <ScrollReveal key={step.num} delay={i}>
             <article>
-              <span className="text-xs text-olympic-yellow font-bold">{step.num}</span>
+              <span className="text-xs text-espresso font-bold">{step.num}</span>
               <h3 className="mt-2">{step.title}</h3>
               <p className="mt-2 text-sm text-muted leading-relaxed">{step.desc}</p>
             </article>
@@ -36,7 +36,7 @@ export function CafePrimer() {
         </Button>
         <Link
           href="/contact#atlas"
-          className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-olympic-yellow transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-espresso/70 transition-colors"
         >
           Book with Atlas →
         </Link>

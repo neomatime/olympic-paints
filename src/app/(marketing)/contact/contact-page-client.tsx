@@ -61,7 +61,7 @@ export function ContactPageClient() {
           {guideSteps.map((step, i) => (
             <ScrollReveal key={step.title} delay={i}>
               <article>
-                <span className="text-xs text-olympic-yellow font-bold">{i + 1}</span>
+                <span className="text-xs text-espresso font-bold">{i + 1}</span>
                 <h3 className="mt-2">{step.title}</h3>
                 <p className="mt-2 text-sm text-muted leading-relaxed">{step.desc}</p>
               </article>
