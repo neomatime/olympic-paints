@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -36,7 +37,41 @@ const spaceOptions = [
 
 const hq = storeLocations[0];
 
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+type ContactFormErrors = {
+  name?: string;
+  email?: string;
+  message?: string;
+};
+
 export function ContactPageClient() {
+  const [errors, setErrors] = useState<ContactFormErrors>({});
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const nextErrors: ContactFormErrors = {};
+    if (!name) nextErrors.name = "Please tell us your name.";
+    if (!email) {
+      nextErrors.email = "Please share an email address.";
+    } else if (!emailPattern.test(email)) {
+      nextErrors.email = "Enter a valid email address.";
+    }
+    if (!message) nextErrors.message = "Let us know a little about your project.";
+
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length === 0) {
+      // Phase 1: mocked submission — no message is actually sent.
+      setSubmitted(true);
+    }
+  }
+
   return (
     <>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
@@ -95,31 +130,47 @@ export function ContactPageClient() {
       <section className="py-24 px-6 max-w-2xl mx-auto">
         <ScrollReveal>
           <SectionHeading eyebrow="Send A Message" title="Reach the Olympic Paints team directly." />
-          <form
-            className="mt-10 space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-            noValidate
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <Input label="Full name" name="name" autoComplete="name" required />
-              <Input label="Email" name="email" type="email" autoComplete="email" required />
+          {submitted ? (
+            <div role="status" className="mt-10 p-8 border border-ink/10 rounded-sm text-center">
+              <h3>Thanks for reaching out.</h3>
+              <p className="mt-3 text-muted leading-relaxed">
+                This is a Phase 1 preview, so your message wasn&apos;t actually sent — we&apos;ll wire up real delivery
+                in Phase 2. In the meantime, call{" "}
+                <a href={`tel:${hq.phone.replace(/[^\d+]/g, "")}`} className="underline">
+                  {hq.phone}
+                </a>{" "}
+                or email{" "}
+                <a href="mailto:info@olympicpaints.co.za" className="underline">
+                  info@olympicpaints.co.za
+                </a>
+                .
+              </p>
+              <Button type="button" variant="ghost" className="mt-6" onClick={() => setSubmitted(false)}>
+                Send another message
+              </Button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <Input label="Phone" name="phone" type="tel" autoComplete="tel" />
-              <Select label="Space we're transforming" name="space" options={spaceOptions} />
-            </div>
-            <Textarea
-              label="Tell us about your project"
-              name="message"
-              placeholder="Share your light, style direction, surfaces, timeline and location."
-              required
-            />
-            <Button type="submit" variant="primary" className="w-full sm:w-auto">
-              Send message
-            </Button>
-          </form>
+          ) : (
+            <form className="mt-10 space-y-6" onSubmit={handleSubmit} noValidate>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <Input label="Full name" name="name" autoComplete="name" required error={errors.name} />
+                <Input label="Email" name="email" type="email" autoComplete="email" required error={errors.email} />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <Input label="Phone" name="phone" type="tel" autoComplete="tel" />
+                <Select label="Space we're transforming" name="space" options={spaceOptions} />
+              </div>
+              <Textarea
+                label="Tell us about your project"
+                name="message"
+                placeholder="Share your light, style direction, surfaces, timeline and location."
+                required
+                error={errors.message}
+              />
+              <Button type="submit" variant="primary" className="w-full sm:w-auto">
+                Send message
+              </Button>
+            </form>
+          )}
         </ScrollReveal>
       </section>
 
