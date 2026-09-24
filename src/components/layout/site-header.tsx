@@ -69,6 +69,7 @@ export function SiteHeader() {
   const { count } = useCart();
   const pathname = usePathname();
   const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const overDarkHero = pathname === "/" && !isScrolled && !menuOpen;
 
   return (
     <>
@@ -77,7 +78,8 @@ export function SiteHeader() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
             ? "bg-cream/95 backdrop-blur-sm shadow-sm py-3"
-            : "bg-transparent py-5"
+            : "bg-transparent py-5",
+          overDarkHero ? "text-cream" : "text-ink"
         )}
       >
         {/* Mobile brand */}
@@ -134,9 +136,9 @@ export function SiteHeader() {
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          <span className={cn("block w-5 h-0.5 bg-ink transition-transform", menuOpen && "rotate-45 translate-y-2")} />
-          <span className={cn("block w-5 h-0.5 bg-ink transition-opacity", menuOpen && "opacity-0")} />
-          <span className={cn("block w-5 h-0.5 bg-ink transition-transform", menuOpen && "-rotate-45 -translate-y-2")} />
+          <span className={cn("block w-5 h-0.5 bg-current transition-transform", menuOpen && "rotate-45 translate-y-2")} />
+          <span className={cn("block w-5 h-0.5 bg-current transition-opacity", menuOpen && "opacity-0")} />
+          <span className={cn("block w-5 h-0.5 bg-current transition-transform", menuOpen && "-rotate-45 -translate-y-2")} />
         </button>
       </header>
 

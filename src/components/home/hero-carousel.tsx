@@ -6,20 +6,9 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const slides = [
-  {
-    image:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_c768e03d-e562-4ba7-801e-b7db4975fec8.png",
-    label: "cinematic living room",
-  },
-  {
-    image:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_aa7d96f6-4b98-404a-92ca-41fb6f205ae8.png",
-    label: "warm interior",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=82",
-    label: "light-filled space",
-  },
+  { image: "/images/hero-front.webp", label: "deep teal living room" },
+  { image: "/images/hero-left.webp", label: "teal living room in afternoon light" },
+  { image: "/images/hero-right.webp", label: "teal lounge by the window" },
 ];
 
 export function HeroCarousel() {
