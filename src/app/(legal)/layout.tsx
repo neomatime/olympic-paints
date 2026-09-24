@@ -7,7 +7,7 @@ export default function LegalLayout({ children }: { children: React.ReactNode })
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Legal" }]} />
       <ScrollReveal>
         <div className="max-w-3xl mx-auto px-6 py-24">
-          <article className="prose prose-sm prose-neutral max-w-none">
+          <article>
             {children}
           </article>
         </div>
