@@ -27,6 +27,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
             className
           )}
           aria-invalid={error ? "true" : undefined}
+          aria-describedby={error ? `${inputId}-error` : undefined}
           {...props}
         >
           {options.map((opt) => (
@@ -35,6 +36,11 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
             </option>
           ))}
         </select>
+        {error && (
+          <p id={`${inputId}-error`} className="text-sm text-red-600" role="alert">
+            {error}
+          </p>
+        )}
       </div>
     );
   }

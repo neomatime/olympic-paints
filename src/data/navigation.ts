@@ -19,7 +19,7 @@ export const navLeft: NavItem[] = [
 ];
 
 export const navRight: NavItem[] = [
-  { label: "Collections", href: "/colour-collections" },
+  { label: "Collections", href: "/collections" },
   { label: "Inspiration", href: "/inspiration" },
   { label: "Find a Store", href: "/find-a-store" },
   { label: "Contact", href: "/contact" },
