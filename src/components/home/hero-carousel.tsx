@@ -105,7 +105,6 @@ export function HeroCarousel() {
             onClick={() => setManuallyPaused((p) => !p)}
             className="w-7 h-7 rounded-full border border-cream/40 text-cream flex items-center justify-center hover:bg-cream/10 transition-colors"
             aria-label={manuallyPaused ? "Play hero slideshow" : "Pause hero slideshow"}
-            aria-pressed={manuallyPaused}
           >
             {manuallyPaused ? (
               <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -120,7 +119,7 @@ export function HeroCarousel() {
         )}
       </div>
 
-      <p className="absolute right-6 bottom-8 text-xs text-cream/30 hidden md:block" aria-hidden="true">
+      <p className="absolute right-6 bottom-8 text-xs text-cream/60 hidden md:block" aria-hidden="true">
         Paint Manufacturer &mdash; Est. 1981 &middot; Lenasia ZA
       </p>
     </section>

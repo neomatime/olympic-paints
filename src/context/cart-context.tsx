@@ -18,8 +18,8 @@ function isCartItem(value: unknown): value is CartItem {
     typeof v.colourId === "string" &&
     typeof v.colourName === "string" &&
     typeof v.sizeLabel === "string" &&
-    typeof v.qty === "number" &&
-    typeof v.price === "number" &&
+    Number.isInteger(v.qty) && (v.qty as number) > 0 &&
+    typeof v.price === "number" && v.price >= 0 &&
     typeof v.image === "string"
   );
 }

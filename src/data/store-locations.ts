@@ -1,8 +1,8 @@
 import type { StoreLocation } from "@/types";
 
 // Centurion Mall address and hours are from its Google Business listing (2026-09-25).
-// Lenasia HQ hours are still placeholders — confirm with the client.
-// Mall of the South address/hours are omitted until confirmed; the store card hides them.
+// Lenasia HQ hours and Mall of the South address/hours are omitted until the client
+// confirms them; the store card hides missing fields.
 export const storeLocations: StoreLocation[] = [
   {
     id: "lenasia-hq",
@@ -14,11 +14,6 @@ export const storeLocations: StoreLocation[] = [
     phone: "(011) 857 1045",
     email: "info@olympicpaints.co.za",
     coordinates: { lat: -26.3336, lng: 27.8462 },
-    hours: [
-      { day: "Monday - Friday", open: "08:00", close: "17:00" },
-      { day: "Saturday", open: "08:00", close: "13:00" },
-      { day: "Sunday", open: "Closed", close: "Closed" },
-    ],
   },
   {
     id: "centurion-mall",

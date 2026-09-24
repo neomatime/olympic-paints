@@ -45,10 +45,10 @@ export function SiteFooter() {
       <div className="border-t border-cream/10 px-6 py-6 flex flex-col md:flex-row items-center justify-between text-xs text-cream/60 max-w-7xl mx-auto">
         <p>&copy; {new Date().getFullYear()} Olympic Paints. All rights reserved.</p>
         <div className="flex gap-6 mt-3 md:mt-0">
-          <Link href="/privacy" className="hover:text-cream/60 transition-colors">Privacy</Link>
-          <Link href="/terms" className="hover:text-cream/60 transition-colors">Terms</Link>
-          <Link href="/shipping" className="hover:text-cream/60 transition-colors">Shipping</Link>
-          <Link href="/returns" className="hover:text-cream/60 transition-colors">Returns</Link>
+          <Link href="/privacy" className="hover:text-cream transition-colors">Privacy</Link>
+          <Link href="/terms" className="hover:text-cream transition-colors">Terms</Link>
+          <Link href="/shipping" className="hover:text-cream transition-colors">Shipping</Link>
+          <Link href="/returns" className="hover:text-cream transition-colors">Returns</Link>
         </div>
       </div>
     </footer>

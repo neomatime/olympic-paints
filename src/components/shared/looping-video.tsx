@@ -23,22 +23,39 @@ export function LoopingVideo({ src, poster, label, className }: LoopingVideoProp
   const prefersReduced = useReducedMotion();
   const [playing, setPlaying] = useState(false);
 
+  const userPausedRef = useRef(false);
+
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || prefersReduced) return;
-    video.play().catch(() => {});
-    setPlaying(true);
+    if (!video) return;
+    // useReducedMotion is false on first render, so check the media query directly
+    // to avoid starting playback before the hook has caught up.
+    if (prefersReduced || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      video.pause();
+      return;
+    }
+    // Browsers pause muted video started off screen, so play only while visible.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (userPausedRef.current) return;
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
   }, [prefersReduced]);
 
   function toggle() {
     const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
+      userPausedRef.current = false;
       video.play().catch(() => {});
-      setPlaying(true);
     } else {
+      userPausedRef.current = true;
       video.pause();
-      setPlaying(false);
     }
   }
 
@@ -52,6 +69,8 @@ export function LoopingVideo({ src, poster, label, className }: LoopingVideoProp
         preload="metadata"
         poster={poster}
         aria-label={label}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
         className="w-full rounded-sm"
       >
         <source src={src} type="video/mp4" />
@@ -61,7 +80,6 @@ export function LoopingVideo({ src, poster, label, className }: LoopingVideoProp
         onClick={toggle}
         className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-ink/60 text-cream flex items-center justify-center hover:bg-ink/80 transition-colors"
         aria-label={playing ? "Pause video" : "Play video"}
-        aria-pressed={playing}
       >
         {playing ? (
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

@@ -75,7 +75,7 @@ export default function OurStoryPage() {
           <ScrollReveal>
             <SectionHeading
               eyebrow="How We Show Up"
-              eyebrowColor="gold"
+              eyebrowColor="gold-on-dark"
               title="Professional credibility with warm human guidance."
               centered
             />

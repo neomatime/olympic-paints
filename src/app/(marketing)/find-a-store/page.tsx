@@ -82,7 +82,7 @@ export default function FindAStorePage() {
                   )}
                 </dl>
                 <div className="mt-auto pt-6 flex flex-col gap-3">
-                  <Button href="/contact" variant="primary" className="w-full">
+                  <Button href="/contact#enquiry" variant="primary" className="w-full">
                     Book a consultation
                   </Button>
                   <Link href="/colour-cafe" className="text-sm font-medium text-center hover:underline">

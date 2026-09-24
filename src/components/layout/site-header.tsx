@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -64,6 +64,7 @@ function NavLink({ item, pathname }: { item: NavItem; pathname: string }) {
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
   const { isScrolled } = useScroll();
   const { count } = useCart();
   const pathname = usePathname();
@@ -139,7 +140,7 @@ export function SiteHeader() {
         </button>
       </header>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} triggerRef={menuToggleRef} />
+      <MobileMenu open={menuOpen} onClose={closeMenu} triggerRef={menuToggleRef} />
     </>
   );
 }
