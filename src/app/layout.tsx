@@ -14,7 +14,7 @@ const organizationSchema = {
   "@id": "https://olympic-paints.vercel.app/#organization",
   name: "Olympic Paints",
   url: "https://olympicpaints.co.za/",
-  logo: "https://olympic-paints.vercel.app/assests/images/logo.png",
+  logo: "https://olympic-paints.vercel.app/images/logo.png",
   description:
     "A South African colour, lifestyle and home transformation partner with more than 40 years of heritage.",
   ...(headquarters
