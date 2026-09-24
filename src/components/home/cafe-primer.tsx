@@ -35,10 +35,10 @@ export function CafePrimer() {
           Understand Colour Cafe
         </Button>
         <Link
-          href="/contact#atlas"
+          href="/contact#enquiry"
           className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-espresso/70 transition-colors"
         >
-          Book with Atlas →
+          Book a consultation →
         </Link>
       </ScrollReveal>
     </section>

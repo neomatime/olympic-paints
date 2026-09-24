@@ -12,7 +12,7 @@ const choices = [
     label: "Home refresh",
     recommendation: "Book a Colour Cafe consultation",
     detail:
-      "Bring room photos, natural-light notes and any furniture or flooring references. Atlas will help prepare the brief.",
+      "Bring room photos, natural-light notes and any furniture or flooring references. Our team will help prepare the brief.",
   },
   {
     id: "retail",
@@ -47,7 +47,7 @@ export function DiscoverySection() {
           eyebrow="Start Here"
           eyebrowColor="gold"
           title="Find your colour direction before you book."
-          description="Choose the closest starting point and we will suggest a consultation focus you can take straight to Atlas."
+          description="Choose the closest starting point and we will suggest a consultation focus you can take straight to our team."
         />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-3" role="group" aria-label="Choose your project starting point">
@@ -72,8 +72,8 @@ export function DiscoverySection() {
             <span className="text-xs text-muted uppercase tracking-wider">Recommended next step</span>
             <h3 className="mt-3">{active.recommendation}</h3>
             <p className="mt-3 text-sm text-muted leading-relaxed">{active.detail}</p>
-            <Button href="/contact#atlas" className="mt-6" variant="primary">
-              Continue with Atlas
+            <Button href="/contact#enquiry" className="mt-6" variant="primary">
+              Request this consultation
             </Button>
           </div>
         </div>

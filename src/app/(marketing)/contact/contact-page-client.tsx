@@ -105,29 +105,7 @@ export function ContactPageClient() {
         </div>
       </section>
 
-      <section id="atlas" className="py-24 px-6 bg-espresso text-cream">
-        <ScrollReveal className="max-w-3xl mx-auto text-center">
-          <p className="flex items-center justify-center gap-3 mb-4 text-xs font-bold tracking-[0.16em] uppercase text-olympic-yellow">
-            <span className="w-6 h-px bg-current" aria-hidden="true" />
-            Meet Atlas
-          </p>
-          <h2 className="text-cream">Your colour consultation guide.</h2>
-          <p className="mt-4 text-cream/70 leading-relaxed max-w-xl mx-auto">
-            Atlas helps you prepare for a design consultation by collecting the details a designer needs: space type,
-            style direction, timeline, location and preferred appointment format. Atlas is arriving soon &mdash; for
-            now, start your request below and our team will follow up directly.
-          </p>
-          <Button
-            href="mailto:info@olympicpaints.co.za?subject=Design%20consultation%20request"
-            className="mt-8"
-            variant="primary"
-          >
-            Start with Atlas
-          </Button>
-        </ScrollReveal>
-      </section>
-
-      <section className="py-24 px-6 max-w-2xl mx-auto">
+      <section id="enquiry" className="py-24 px-6 max-w-2xl mx-auto">
         <ScrollReveal>
           <SectionHeading eyebrow="Send A Message" title="Reach the Olympic Paints team directly." />
           {submitted ? (
@@ -178,7 +156,7 @@ export function ContactPageClient() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <ScrollReveal>
             <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2>Colour Cafe visits</h2>
+              <h2 className="text-2xl leading-tight">Colour Cafe visits</h2>
               <p className="mt-3 text-muted text-sm leading-relaxed">
                 Come for coffee, guidance and an immersive look at colour, materials and room direction.
               </p>
@@ -189,18 +167,19 @@ export function ContactPageClient() {
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2>Design consultations</h2>
+              <h2 className="text-2xl leading-tight">Design consultations</h2>
               <p className="mt-3 text-muted text-sm leading-relaxed">
-                Atlas helps gather the right details so a specialist can guide your palette, finishes and next steps.
+                Share your space, style direction and timeline so a specialist can guide your palette, finishes and
+                next steps.
               </p>
-              <Link href="#atlas" className="inline-block mt-4 text-sm font-medium hover:underline">
-                Start with Atlas
+              <Link href="#enquiry" className="inline-block mt-4 text-sm font-medium hover:underline">
+                Request a consultation
               </Link>
             </article>
           </ScrollReveal>
           <ScrollReveal delay={2}>
             <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2>Store support</h2>
+              <h2 className="text-2xl leading-tight">Store support</h2>
               <p className="mt-3 text-muted text-sm leading-relaxed">
                 Need practical help with finishes, quantities or your nearest partner location? Call{" "}
                 <a href={`tel:${hq.phone.replace(/[^\d+]/g, "")}`} className="underline">

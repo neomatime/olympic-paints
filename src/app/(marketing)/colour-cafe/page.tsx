@@ -56,7 +56,7 @@ export default function ColourCafePage() {
             through a design consultation with us.
           </p>
           <div className="flex flex-wrap gap-4 mt-8">
-            <Button href="/contact#atlas" variant="primary">
+            <Button href="/contact#enquiry" variant="primary">
               Book a design consultation
             </Button>
             <Button href="#gallery" variant="ghost">
@@ -83,14 +83,14 @@ export default function ColourCafePage() {
               Book The Visit
             </p>
             <h3 className="text-cream">
-              Bring photos, plans, flooring ideas, fabric references or just a feeling. Atlas will help prepare your
-              appointment.
+              Bring photos, plans, flooring ideas, fabric references or just a feeling. We will help you prepare
+              for your appointment.
             </h3>
             <Link
-              href="/contact#atlas"
+              href="/contact#enquiry"
               className="inline-block mt-4 text-sm font-medium text-olympic-yellow hover:underline"
             >
-              Start with Atlas
+              Request a visit
             </Link>
           </ScrollReveal>
           <ScrollReveal delay={1} className="relative aspect-[4/3] rounded-sm overflow-hidden">
@@ -149,7 +149,7 @@ export default function ColourCafePage() {
             title="Every surface has a role in the story."
             description="Consultations bring together wall colour, flooring, furniture, lighting, cabinetry, textiles and finishes. The result is not a colour chip in isolation, but a room direction you can feel."
           />
-          <Link href="/contact#atlas" className="inline-block mt-4 text-sm font-medium hover:underline">
+          <Link href="/contact#enquiry" className="inline-block mt-4 text-sm font-medium hover:underline">
             Book a design consultation
           </Link>
         </ScrollReveal>
@@ -171,11 +171,11 @@ export default function ColourCafePage() {
           </p>
           <h2>Ready to sit with an interior designer?</h2>
           <p className="mt-4 text-muted leading-relaxed">
-            Atlas will collect the details your designer needs before your Colour Cafe appointment, whether you are
+            Share a few details before your Colour Cafe appointment so your designer arrives prepared, whether you are
             shaping a home, studio, office, store, hospitality space or a custom creative brief.
           </p>
-          <Button href="/contact#atlas" className="mt-8" variant="primary">
-            Book with Atlas
+          <Button href="/contact#enquiry" className="mt-8" variant="primary">
+            Book a consultation
           </Button>
         </ScrollReveal>
       </section>

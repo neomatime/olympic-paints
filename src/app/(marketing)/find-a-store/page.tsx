@@ -117,8 +117,8 @@ export default function FindAStorePage() {
             Get in touch and we will help you choose the right Colour Cafe, prepare your brief and route your project
             to the right design support.
           </p>
-          <Button href="/contact#atlas" className="mt-8" variant="primary">
-            Start with Atlas
+          <Button href="/contact#enquiry" className="mt-8" variant="primary">
+            Get in touch
           </Button>
         </ScrollReveal>
       </section>

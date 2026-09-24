@@ -75,7 +75,7 @@ export function HeroCarousel() {
           confidence.
         </p>
         <div className="flex gap-4 mt-8">
-          <Button href="/contact#atlas" variant="primary">
+          <Button href="/contact#enquiry" variant="primary">
             Book a Colour Cafe consultation
           </Button>
           <Button href="/collections" variant="outline">
