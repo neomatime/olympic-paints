@@ -10,3 +10,9 @@ desktop.ini
 node_modules/
 
 .vercel
+
+# Worktrees
+.worktrees/
+
+# SDD workspace
+.superpowers/
