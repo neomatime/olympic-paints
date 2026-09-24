@@ -9,7 +9,7 @@ import { useCart } from "@/context/cart-context";
 import { formatPrice } from "@/lib/utils";
 
 export default function CartPage() {
-  const { items, removeItem, updateQty, total } = useCart();
+  const { items, removeItem, updateQty, total, hydrated } = useCart();
 
   return (
     <>
@@ -17,7 +17,9 @@ export default function CartPage() {
       <PageHero eyebrow="Shopping Bag" title="Your bag." compact />
 
       <section className="py-16 md:py-24 px-6 max-w-4xl mx-auto">
-        {items.length === 0 ? (
+        {!hydrated ? (
+          <div className="py-16" aria-hidden="true" />
+        ) : items.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-muted mb-8">Your bag is empty.</p>
             <Button href="/products" variant="primary">
@@ -28,7 +30,7 @@ export default function CartPage() {
           <>
             <ul className="divide-y divide-ink/10 border-y border-ink/10">
               {items.map((item) => (
-                <li key={`${item.productId}-${item.sizeLabel}`} className="flex gap-6 py-6">
+                <li key={`${item.productId}-${item.sizeLabel}-${item.colourId}`} className="flex gap-6 py-6">
                   <div className="relative w-28 h-28 shrink-0 rounded-sm overflow-hidden bg-paper">
                     <Image src={item.image} alt={item.productName} fill className="object-cover" />
                   </div>
@@ -46,13 +48,13 @@ export default function CartPage() {
                       <p className="font-medium whitespace-nowrap">{formatPrice(item.price * item.qty)}</p>
                     </div>
                     <div className="flex items-center gap-4 mt-4">
-                      <label className="text-sm text-muted" htmlFor={`qty-${item.productId}-${item.sizeLabel}`}>
+                      <label className="text-sm text-muted" htmlFor={`qty-${item.productId}-${item.sizeLabel}-${item.colourId}`}>
                         Qty
                       </label>
                       <select
-                        id={`qty-${item.productId}-${item.sizeLabel}`}
+                        id={`qty-${item.productId}-${item.sizeLabel}-${item.colourId}`}
                         value={item.qty}
-                        onChange={(e) => updateQty(item.productId, item.sizeLabel, Number(e.target.value))}
+                        onChange={(e) => updateQty(item.productId, item.sizeLabel, item.colourId, Number(e.target.value))}
                         className="px-3 py-1.5 text-sm border border-ink/10 rounded-sm bg-paper"
                       >
                         {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
@@ -63,7 +65,7 @@ export default function CartPage() {
                       </select>
                       <button
                         type="button"
-                        onClick={() => removeItem(item.productId, item.sizeLabel)}
+                        onClick={() => removeItem(item.productId, item.sizeLabel, item.colourId)}
                         className="text-sm text-muted hover:text-ink underline"
                       >
                         Remove

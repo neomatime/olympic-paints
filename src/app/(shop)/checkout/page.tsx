@@ -22,7 +22,7 @@ const provinces = [
 ];
 
 export default function CheckoutPage() {
-  const { items, total, clearCart } = useCart();
+  const { items, total, clearCart, hydrated } = useCart();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -51,6 +51,15 @@ export default function CheckoutPage() {
             Continue Shopping
           </Button>
         </section>
+      </>
+    );
+  }
+
+  if (!hydrated) {
+    return (
+      <>
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Cart", href: "/cart" }, { label: "Checkout" }]} />
+        <section className="py-24 px-6 max-w-2xl mx-auto" aria-hidden="true" />
       </>
     );
   }
@@ -116,11 +125,12 @@ export default function CheckoutPage() {
             <h2 className="text-lg font-medium mb-4">Order Summary</h2>
             <ul className="divide-y divide-ink/10">
               {items.map((item) => (
-                <li key={`${item.productId}-${item.sizeLabel}`} className="py-3 flex items-start justify-between gap-4 text-sm">
+                <li key={`${item.productId}-${item.sizeLabel}-${item.colourId}`} className="py-3 flex items-start justify-between gap-4 text-sm">
                   <div>
                     <p className="font-medium">{item.productName}</p>
                     <p className="text-muted mt-0.5">
-                      {item.sizeLabel} &times; {item.qty}
+                      {item.sizeLabel}
+                      {item.colourName ? ` · ${item.colourName}` : ""} &times; {item.qty}
                     </p>
                   </div>
                   <p className="whitespace-nowrap">{formatPrice(item.price * item.qty)}</p>

@@ -60,7 +60,7 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
           ) : (
             <ul className="divide-y divide-ink/10">
               {items.map((item) => (
-                <li key={`${item.productId}-${item.sizeLabel}`} className="flex gap-4 py-4">
+                <li key={`${item.productId}-${item.sizeLabel}-${item.colourId}`} className="flex gap-4 py-4">
                   <div className="relative w-20 h-20 shrink-0 rounded-sm overflow-hidden bg-paper">
                     <Image src={item.image} alt={item.productName} fill className="object-cover" />
                   </div>
@@ -71,13 +71,13 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
                       {item.colourName ? ` · ${item.colourName}` : ""}
                     </p>
                     <div className="flex items-center gap-3 mt-2">
-                      <label className="sr-only" htmlFor={`qty-${item.productId}-${item.sizeLabel}`}>
+                      <label className="sr-only" htmlFor={`qty-${item.productId}-${item.sizeLabel}-${item.colourId}`}>
                         Quantity for {item.productName}
                       </label>
                       <select
-                        id={`qty-${item.productId}-${item.sizeLabel}`}
+                        id={`qty-${item.productId}-${item.sizeLabel}-${item.colourId}`}
                         value={item.qty}
-                        onChange={(e) => updateQty(item.productId, item.sizeLabel, Number(e.target.value))}
+                        onChange={(e) => updateQty(item.productId, item.sizeLabel, item.colourId, Number(e.target.value))}
                         className="px-2 py-1 text-sm border border-ink/10 rounded-sm bg-paper"
                       >
                         {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
@@ -88,7 +88,7 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
                       </select>
                       <button
                         type="button"
-                        onClick={() => removeItem(item.productId, item.sizeLabel)}
+                        onClick={() => removeItem(item.productId, item.sizeLabel, item.colourId)}
                         className="text-xs text-muted hover:text-ink underline"
                       >
                         Remove
