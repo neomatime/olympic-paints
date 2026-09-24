@@ -16,3 +16,21 @@ node_modules/
 
 # SDD workspace
 .superpowers/
+
+# next.js
+/.next/
+/out/
+
+# production build
+/build
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# testing
+/coverage
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example

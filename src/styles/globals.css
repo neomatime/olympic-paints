@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Balimo';
+  src: url('/fonts/Balimo-Regular.otf') format('opentype'),
+       url('/fonts/Balimo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Balimo';
+  src: url('/fonts/Balimo-Bold.otf') format('opentype'),
+       url('/fonts/Balimo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-olympic-yellow: #FBC70F;
+  --color-yellow-soft: #FFF6CC;
+  --color-yellow-deep: #D7A500;
+  --color-espresso: #111111;
+  --color-walnut: #252525;
+  --color-taupe: #5F5F5F;
+  --color-ink: #111111;
+  --color-cream: #FFFFFF;
+  --color-paper: #F7F7F5;
+  --color-linen: #F1F1EE;
+  --color-nude: #E8E8E3;
+  --color-blush: #D7D7D2;
+  --color-sage: #7E9B72;
+  --color-muted: #5E5E5E;
+
+  --font-family-serif: 'Balimo', Georgia, serif;
+  --font-family-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    @apply font-sans text-ink bg-cream antialiased leading-relaxed;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif font-normal tracking-tight;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 7.5vw, 7.5rem);
+    line-height: 0.92;
+  }
+
+  h2 {
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+    line-height: 1.25;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
