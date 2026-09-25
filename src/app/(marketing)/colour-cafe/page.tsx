@@ -19,15 +19,15 @@ const visitSteps = colourCafeVisitSteps;
 
 const galleryItems = [
   {
-    src: "/images/colour-cafe-studio.svg",
-    alt: "Colour Cafe consultation studio with material boards",
+    src: "/images/colour-cafe/designer.webp",
+    alt: "Smiling Olympic Colour Cafe team member in an apron",
     title: "Meet the designers who help translate inspiration into a room direction.",
     subtitle: "Consultation Studio",
     tall: true,
   },
   {
-    src: "/images/heritage-interior.svg",
-    alt: "Warm interior vision for a designed home",
+    src: "/images/colour-cafe/choosing-colour.webp",
+    alt: "Two visitors holding up a paint colour strip to the light",
     title: "See the feeling before you choose the finish.",
     subtitle: "Future Home",
   },
@@ -61,10 +61,12 @@ export default function ColourCafePage() {
         </ScrollReveal>
         <ScrollReveal delay={1} className="relative aspect-[4/3] rounded-sm overflow-hidden">
           <Image
-            src="/images/colour-cafe-studio.svg"
-            alt="Boutique design studio with warm light and material samples"
+            src="/images/colour-cafe/cafe-interior.webp"
+            alt="Inside the Olympic Colour Cafe, with the illuminated Olympic Paints sign, colour wall and plants"
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
+            priority
           />
         </ScrollReveal>
       </section>
@@ -90,11 +92,11 @@ export default function ColourCafePage() {
           </ScrollReveal>
           <ScrollReveal delay={1} className="relative aspect-[4/3] rounded-sm overflow-hidden">
             <Image
-              src="https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_6ebea8f8-552f-4638-ab05-b057ae298e29.png"
-              alt="Colour and texture inspiration for a design consultation"
+              src="/images/colour-cafe/coffee-consultation.webp"
+              alt="A coffee beside a hand fanning through warm paint colour cards"
               fill
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
-              unoptimized
             />
           </ScrollReveal>
         </div>
@@ -150,9 +152,10 @@ export default function ColourCafePage() {
         </ScrollReveal>
         <ScrollReveal delay={1} className="md:order-1 relative aspect-[4/3] rounded-sm overflow-hidden">
           <Image
-            src="/images/colour-cafe-studio.svg"
-            alt="Interior materials, paint samples and moodboard elements"
+            src="/images/colour-cafe/material-wall.webp"
+            alt="A visitor browsing the Colour Cafe wall of paint and material samples"
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
         </ScrollReveal>
