@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       { source: "/privacy-policy", destination: "/privacy", permanent: true },
       { source: "/privacy-policy.html", destination: "/privacy", permanent: true },
       { source: "/index.html", destination: "/", permanent: true },
+      { source: "/index", destination: "/", permanent: true },
       // Every other old static page kept the same slug, just dropped the
       // extension: /products.html -> /products, /contact.html -> /contact, etc.
       { source: "/checkout.html", destination: "/checkout", permanent: true },
