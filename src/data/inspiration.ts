@@ -7,141 +7,105 @@ const byId = (id: string) => {
   return colour;
 };
 
-// NOTE: the existing site only contains one genuinely room-specific photograph
-// (the "Layered living room in warm neutral tones" image on index.html). It has
-// no dedicated photography for bedroom/kitchen/bathroom/kids-room/outdoor. The
-// entries below reuse the real lifestyle image URLs that exist across
-// index.html and colour-cafe.html (all are real assets already on the site,
-// not invented), paired with plausible titles/colours per room type so every
-// RoomType has at least two entries as requested. Titles/colour pairings for
-// non-living-room entries are best-effort compositions, not scraped copy.
+// Room imagery supplied by the client (2026-09-25). Titles describe each image;
+// coloursUsed are the closest swatches from colours.ts, not confirmed product colours.
+const DESIGNER = "Olympic Design Team";
+
 export const inspirations: RoomInspiration[] = [
   {
-    id: "modern-living-warmth",
-    title: "Modern Living with Warmth",
+    id: "terracotta-olive-living",
+    title: "Terracotta and Olive Living Room",
     roomType: "living-room",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_c768e03d-e562-4ba7-801e-b7db4975fec8.png",
-    },
-    coloursUsed: [byId("olympic-yellow"), byId("gallery-white"), byId("leaf-green")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/terracotta-olive-living.webp" },
+    coloursUsed: [byId("clay-earth"), byId("leaf-green"), byId("cloud-white")],
+    designer: DESIGNER,
   },
   {
-    id: "layered-living-neutrals",
-    title: "Layered Living in Warm Neutrals",
+    id: "neutral-fireplace-living",
+    title: "Soft Neutral Living Room with Fireplace",
     roomType: "living-room",
-    images: {
-      after: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=82",
-    },
-    coloursUsed: [byId("cloud-white"), byId("clay-earth"), byId("slate-line")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/neutral-fireplace-living.webp" },
+    coloursUsed: [byId("cloud-white"), byId("soft-grey"), byId("clay-earth")],
+    designer: DESIGNER,
   },
   {
-    id: "calm-bedroom-soft-light",
-    title: "Calm Bedroom in Soft Light",
+    id: "gallery-wall-living",
+    title: "Gallery Wall Living Room in Warm Neutrals",
+    roomType: "living-room",
+    images: { after: "/images/inspiration/gallery-wall-living.webp" },
+    coloursUsed: [byId("soft-grey"), byId("leaf-green"), byId("ink-black")],
+    designer: DESIGNER,
+  },
+  {
+    id: "cream-olive-bedroom",
+    title: "Serene Bedroom in Cream and Olive",
     roomType: "bedroom",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_aa7d96f6-4b98-404a-92ca-41fb6f205ae8.png",
-    },
-    coloursUsed: [byId("soft-grey"), byId("sky-wash"), byId("morning-yellow")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/cream-olive-bedroom.webp" },
+    coloursUsed: [byId("cloud-white"), byId("leaf-green"), byId("soft-grey")],
+    designer: DESIGNER,
   },
   {
-    id: "quiet-retreat-muted-tones",
-    title: "Quiet Retreat in Muted Tones",
-    roomType: "bedroom",
-    images: {
-      after: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=82",
-    },
-    coloursUsed: [byId("gallery-white"), byId("dusk-blue"), byId("cloud-white")],
-    designer: "Olympic Design Team",
-  },
-  {
-    id: "kitchen-natural-tones",
-    title: "Kitchen Grounded in Natural Tones",
+    id: "terracotta-kitchen",
+    title: "Sunlit Kitchen with Terracotta Accents",
     roomType: "kitchen",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_6ebea8f8-552f-4638-ab05-b057ae298e29.png",
-    },
-    coloursUsed: [byId("clay-earth"), byId("gallery-white"), byId("slate-line")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/terracotta-kitchen.webp" },
+    coloursUsed: [byId("gallery-white"), byId("clay-earth"), byId("morning-yellow")],
+    designer: DESIGNER,
   },
   {
-    id: "bright-kitchen-warm-accents",
-    title: "Bright Kitchen with Warm Accents",
+    id: "travertine-kitchen",
+    title: "Travertine Kitchen in Natural Tones",
     roomType: "kitchen",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_2d5368d6-76ec-4138-9dba-25cb57ea653f.png",
-    },
-    coloursUsed: [byId("olympic-yellow"), byId("gallery-white"), byId("brushed-silver")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/travertine-kitchen.webp" },
+    coloursUsed: [byId("cloud-white"), byId("soft-grey"), byId("clay-earth")],
+    designer: DESIGNER,
   },
   {
-    id: "bathroom-cool-calm",
-    title: "Bathroom in Cool Calm Tones",
+    id: "stone-oak-bathroom",
+    title: "Stone and Oak Bathroom",
     roomType: "bathroom",
-    images: {
-      after: "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=2200&q=82",
-    },
-    coloursUsed: [byId("sky-wash"), byId("studio-blue"), byId("gallery-white")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/stone-oak-bathroom.webp" },
+    coloursUsed: [byId("soft-grey"), byId("cloud-white"), byId("leaf-green")],
+    designer: DESIGNER,
   },
   {
-    id: "spa-inspired-bathroom",
-    title: "Spa-Inspired Bathroom Palette",
+    id: "spa-bathroom-view",
+    title: "Spa Bathroom with a View",
     roomType: "bathroom",
-    images: {
-      after: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=82",
-    },
-    coloursUsed: [byId("cloud-white"), byId("deep-teal"), byId("dusk-blue")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/spa-bathroom-view.webp" },
+    coloursUsed: [byId("cloud-white"), byId("soft-grey"), byId("sky-wash")],
+    designer: DESIGNER,
   },
   {
-    id: "playful-kids-room",
-    title: "Playful Kids Room in Optimistic Colour",
+    id: "olive-safari-kids-room",
+    title: "Olive Safari Kids Room",
     roomType: "kids-room",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_c768e03d-e562-4ba7-801e-b7db4975fec8.png",
-    },
-    coloursUsed: [byId("olympic-yellow"), byId("lemon-light"), byId("leaf-green")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/olive-safari-kids-room.webp" },
+    coloursUsed: [byId("leaf-green"), byId("clay-earth"), byId("cloud-white")],
+    designer: DESIGNER,
   },
   {
-    id: "kids-room-gentle-contrast",
-    title: "Kids Room with Gentle Contrast",
+    id: "sunny-playroom",
+    title: "Sunny Playroom in Soft Pastels",
     roomType: "kids-room",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_aa7d96f6-4b98-404a-92ca-41fb6f205ae8.png",
-    },
-    coloursUsed: [byId("studio-violet"), byId("gallery-white"), byId("morning-yellow")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/sunny-playroom.webp" },
+    coloursUsed: [byId("morning-yellow"), byId("sky-wash"), byId("leaf-green")],
+    designer: DESIGNER,
   },
   {
-    id: "exterior-confident-contrast",
-    title: "Exterior Refresh with Confident Contrast",
+    id: "modern-entrance",
+    title: "Modern Entrance in Warm Evening Light",
     roomType: "outdoor",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_6ebea8f8-552f-4638-ab05-b057ae298e29.png",
-    },
-    coloursUsed: [byId("slate-line"), byId("gallery-white"), byId("ink-black")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/modern-entrance.webp" },
+    coloursUsed: [byId("gallery-white"), byId("ink-black"), byId("soft-grey")],
+    designer: DESIGNER,
   },
   {
-    id: "weather-ready-outdoor",
-    title: "Weather-Ready Outdoor Palette",
+    id: "poolside-patio",
+    title: "Poolside Patio at Dusk",
     roomType: "outdoor",
-    images: {
-      after:
-        "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_2d5368d6-76ec-4138-9dba-25cb57ea653f.png",
-    },
-    coloursUsed: [byId("clay-earth"), byId("ink-black"), byId("slate-line")],
-    designer: "Olympic Design Team",
+    images: { after: "/images/inspiration/poolside-patio.webp" },
+    coloursUsed: [byId("slate-line"), byId("soft-grey"), byId("deep-teal")],
+    designer: DESIGNER,
   },
 ];
