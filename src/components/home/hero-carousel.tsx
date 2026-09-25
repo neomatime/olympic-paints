@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const slides = [
-  { image: "/images/hero-front.webp", label: "deep teal living room" },
   { image: "/images/hero-left.webp", label: "teal living room in afternoon light" },
+  { image: "/images/hero-front.webp", label: "deep teal living room" },
   { image: "/images/hero-right.webp", label: "teal lounge by the window" },
 ];
 
