@@ -19,7 +19,7 @@ const storyPhotos = [
   {
     src: "/images/our-story/consultation.webp",
     alt: "A smiling guest in the Colour Cafe talking with two visitors, framed by plants",
-    subtitle: "Consultation",
+    subtitle: "Welcome",
   },
   {
     src: "/images/our-story/colour-wall.webp",
