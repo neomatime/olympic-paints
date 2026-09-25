@@ -14,13 +14,22 @@ export default function CartPage() {
   return (
     <>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Your Bag" }]} />
-      <PageHero eyebrow="Shopping Bag" title="Your bag." compact />
+      <PageHero eyebrow="Shopping Bag" title="Your bag." backgroundImage="/images/cart/hero.webp" compact />
 
       <section className="py-16 md:py-24 px-6 max-w-4xl mx-auto">
         {!hydrated ? (
           <div className="py-16" aria-hidden="true" />
         ) : items.length === 0 ? (
           <div className="text-center py-16">
+            <div className="relative mx-auto mb-10 aspect-[16/9] max-w-2xl overflow-hidden rounded-sm bg-paper">
+              <Image
+                src="/images/cart/empty-bag.webp"
+                alt="Coffee beans in a wooden tray beside fabric and colour swatches at the Colour Cafe"
+                fill
+                sizes="(min-width: 672px) 672px, 100vw"
+                className="object-cover"
+              />
+            </div>
             <p className="text-muted mb-8">Your bag is empty.</p>
             <Button href="/products" variant="primary">
               Continue Shopping
