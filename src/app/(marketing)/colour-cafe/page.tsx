@@ -62,7 +62,7 @@ export default function ColourCafePage() {
         <ScrollReveal delay={1} className="relative aspect-[4/3] rounded-sm overflow-hidden">
           <Image
             src="/images/colour-cafe/cafe-interior.webp"
-            alt="Inside the Olympic Colour Cafe, with the illuminated Olympic Paints sign, colour wall and plants"
+            alt="The illuminated Olympic Paints Inspiring Colour sign in the Colour Cafe, seen through plants beside the colour wall"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
