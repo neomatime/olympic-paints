@@ -6,16 +6,17 @@ type PageHeroProps = {
   title: string;
   description?: string;
   backgroundImage?: string;
+  backgroundPosition?: string;
   compact?: boolean;
 };
 
-export function PageHero({ eyebrow, title, description, backgroundImage, compact }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, backgroundImage, backgroundPosition, compact }: PageHeroProps) {
   return (
     <section className={cn("relative overflow-hidden", compact ? "py-24" : "py-32 md:py-44")}>
       {backgroundImage && (
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${backgroundImage}')` }}
+          style={{ backgroundImage: `url('${backgroundImage}')`, backgroundPosition }}
         >
           <div className="absolute inset-0 bg-espresso/70" />
         </div>

@@ -20,6 +20,8 @@ export default function CollectionsPage() {
         eyebrow="Colour Collections"
         title="Curated palettes for every mood and room."
         description="Each collection brings together colours designed to work in harmony, from the 2026 Colour of the Year to gallery whites and graphic accents."
+        backgroundImage="/images/collections/hero.webp"
+        backgroundPosition="75% center"
         compact
       />
 
