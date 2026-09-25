@@ -20,7 +20,7 @@ const visitSteps = colourCafeVisitSteps;
 const galleryItems = [
   {
     src: "/images/colour-cafe/designer.webp",
-    alt: "Smiling Olympic Colour Cafe team member in an apron",
+    alt: "Smiling woman seated in the Colour Cafe, with the colour wall behind her",
     title: "Meet the designers who help translate inspiration into a room direction.",
     subtitle: "Consultation Studio",
     tall: true,
@@ -153,7 +153,7 @@ export default function ColourCafePage() {
         <ScrollReveal delay={1} className="md:order-1 relative aspect-[4/3] rounded-sm overflow-hidden">
           <Image
             src="/images/colour-cafe/material-wall.webp"
-            alt="A visitor browsing the Colour Cafe wall of paint and material samples"
+            alt="Visitors talking in the Colour Cafe beside the consultation screen and plants"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
