@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { PageHero } from "@/components/shared/page-hero";
 import { Input } from "@/components/ui/input";
@@ -42,6 +43,16 @@ export default function CheckoutPage() {
       <>
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Checkout" }]} />
         <section className="py-24 px-6 max-w-2xl mx-auto text-center">
+          <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-sm bg-paper">
+            <Image
+              src="/images/checkout/thank-you.webp"
+              alt="A Colour Cafe coffee beside a hand fanning through paint colour cards"
+              fill
+              sizes="(min-width: 672px) 624px, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
           <h1>Thank you for your order!</h1>
           <p className="mt-4 text-muted leading-relaxed">
             Your order has been placed successfully. This is a demo checkout, so no payment has actually been
@@ -69,6 +80,16 @@ export default function CheckoutPage() {
       <>
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Checkout" }]} />
         <section className="py-24 px-6 max-w-2xl mx-auto text-center">
+          <div className="relative mb-10 aspect-[16/9] overflow-hidden rounded-sm bg-paper">
+            <Image
+              src="/images/checkout/empty-bag.webp"
+              alt="A Colour Cafe coffee cup in front of Olympic Paints Adventure colour boxes"
+              fill
+              sizes="(min-width: 672px) 624px, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
           <h1>Your bag is empty.</h1>
           <p className="mt-4 text-muted">Add some products before checking out.</p>
           <Button href="/products" className="mt-8" variant="primary">
@@ -82,7 +103,12 @@ export default function CheckoutPage() {
   return (
     <>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Cart", href: "/cart" }, { label: "Checkout" }]} />
-      <PageHero eyebrow="Checkout" title="Complete your order." compact />
+      <PageHero
+        eyebrow="Checkout"
+        title="Complete your order."
+        backgroundImage="/images/checkout/hero.webp"
+        compact
+      />
 
       <section className="py-16 md:py-24 px-6 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
