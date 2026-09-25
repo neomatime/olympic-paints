@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -79,6 +80,7 @@ export function ContactPageClient() {
         eyebrow="Start With A Conversation"
         title="Tell us about the home you want to create."
         description="Whether you are planning a home, workspace, studio, store, hospitality space or something completely custom, we will guide you toward the right consultation, store support or Colour Cafe visit."
+        backgroundImage="/images/contact/hero.webp"
         compact
       />
 
@@ -155,41 +157,56 @@ export function ContactPageClient() {
       <section className="py-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <ScrollReveal>
-            <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Colour Cafe visits</h2>
-              <p className="mt-3 text-muted text-sm leading-relaxed">
-                Come for coffee, guidance and an immersive look at colour, materials and room direction.
-              </p>
-              <Link href="/colour-cafe" className="inline-block mt-4 text-sm font-medium hover:underline">
-                Explore the experience
-              </Link>
+            <article className="border border-ink/10 rounded-sm h-full overflow-hidden">
+              <div className="relative aspect-[16/9] bg-paper">
+                <Image src="/images/contact/cafe-visits.webp" alt="Stacked Olympic Colour Cafe coffee cups" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+              </div>
+              <div className="p-8">
+                <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Colour Cafe visits</h2>
+                <p className="mt-3 text-muted text-sm leading-relaxed">
+                  Come for coffee, guidance and an immersive look at colour, materials and room direction.
+                </p>
+                <Link href="/colour-cafe" className="inline-block mt-4 text-sm font-medium hover:underline">
+                  Explore the experience
+                </Link>
+              </div>
             </article>
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Design consultations</h2>
-              <p className="mt-3 text-muted text-sm leading-relaxed">
-                Share your space, style direction and timeline so a specialist can guide your palette, finishes and
-                next steps.
-              </p>
-              <Link href="#enquiry" className="inline-block mt-4 text-sm font-medium hover:underline">
-                Request a consultation
-              </Link>
+            <article className="border border-ink/10 rounded-sm h-full overflow-hidden">
+              <div className="relative aspect-[16/9] bg-paper">
+                <Image src="/images/contact/consultations.webp" alt="A visitor browsing the Colour Cafe swatch wall with a designer" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+              </div>
+              <div className="p-8">
+                <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Design consultations</h2>
+                <p className="mt-3 text-muted text-sm leading-relaxed">
+                  Share your space, style direction and timeline so a specialist can guide your palette, finishes and
+                  next steps.
+                </p>
+                <Link href="#enquiry" className="inline-block mt-4 text-sm font-medium hover:underline">
+                  Request a consultation
+                </Link>
+              </div>
             </article>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Store support</h2>
-              <p className="mt-3 text-muted text-sm leading-relaxed">
-                Need practical help with finishes, quantities or your nearest partner location? Call{" "}
-                <a href={`tel:${hq.phone.replace(/[^\d+]/g, "")}`} className="underline">
-                  {hq.phone}
-                </a>
-                .
-              </p>
-              <Link href="/find-a-store" className="inline-block mt-4 text-sm font-medium hover:underline">
-                Find support
-              </Link>
+            <article className="border border-ink/10 rounded-sm h-full overflow-hidden">
+              <div className="relative aspect-[16/9] bg-paper">
+                <Image src="/images/contact/store-support.webp" alt="Colour sample tiles with Olympic Paints product tags" fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+              </div>
+              <div className="p-8">
+                <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Store support</h2>
+                <p className="mt-3 text-muted text-sm leading-relaxed">
+                  Need practical help with finishes, quantities or your nearest partner location? Call{" "}
+                  <a href={`tel:${hq.phone.replace(/[^\d+]/g, "")}`} className="underline">
+                    {hq.phone}
+                  </a>
+                  .
+                </p>
+                <Link href="/find-a-store" className="inline-block mt-4 text-sm font-medium hover:underline">
+                  Find support
+                </Link>
+              </div>
             </article>
           </ScrollReveal>
         </div>
