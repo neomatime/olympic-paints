@@ -15,6 +15,7 @@ export const navLeft: NavItem[] = [
       ...productCategories.map((c) => ({ label: c.label, href: `/products?category=${c.id}` })),
     ],
   },
+  { label: "VibrAInt", href: "https://vibraint.net/", external: true },
 ];
 
 export const navRight: NavItem[] = [

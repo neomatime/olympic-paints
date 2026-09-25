@@ -51,6 +51,15 @@ function NavLink({ item, pathname }: { item: NavItem; pathname: string }) {
     );
   }
 
+  if (item.external) {
+    return (
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className="nav-link">
+        {item.label}
+        <span className="sr-only"> (opens in a new tab)</span>
+      </a>
+    );
+  }
+
   return (
     <Link
       href={item.href}
@@ -83,18 +92,18 @@ export function SiteHeader() {
         )}
       >
         {/* Mobile brand */}
-        <Link href="/" className="md:hidden absolute left-4 top-1/2 -translate-y-1/2" aria-label="Olympic Paints home">
+        <Link href="/" className="lg:hidden absolute left-4 top-1/2 -translate-y-1/2" aria-label="Olympic Paints home">
           <Image src="/images/logo.png" alt="Olympic Paints" width={40} height={40} />
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center gap-8 px-8" aria-label="Primary navigation">
-          <div className="flex items-center gap-8">
+        <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 px-6 whitespace-nowrap" aria-label="Primary navigation">
+          <div className="flex items-center gap-6 xl:gap-8">
             {navLeft.map((item) => (
               <NavLink key={item.href} item={item} pathname={pathname} />
             ))}
           </div>
 
-          <Link href="/" className="mx-8" aria-label="Olympic Paints home">
+          <Link href="/" className="mx-4 xl:mx-8" aria-label="Olympic Paints home">
             <Image
               src="/images/logo.png"
               alt="Olympic Paints"
@@ -108,7 +117,7 @@ export function SiteHeader() {
             />
           </Link>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 xl:gap-8">
             {navRight.map((item) => (
               <NavLink key={item.href} item={item} pathname={pathname} />
             ))}
@@ -130,7 +139,7 @@ export function SiteHeader() {
         {/* Mobile menu toggle */}
         <button
           ref={menuToggleRef}
-          className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-1.5 p-2"
+          className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"

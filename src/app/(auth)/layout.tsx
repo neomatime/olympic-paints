@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="pt-16 md:pt-24 lg:grid lg:grid-cols-2">
+    <div className="pt-16 lg:pt-24 lg:grid lg:grid-cols-2">
       <aside className="relative hidden lg:block" aria-hidden="true">
         <div className="sticky top-24 h-[calc(100vh-6rem)] min-h-[560px] overflow-hidden">
           <Image src="/images/hero-right.webp" alt="" fill sizes="50vw" className="object-cover" priority />

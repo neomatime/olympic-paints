@@ -77,7 +77,7 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
       ref={containerRef}
       inert={!open}
       className={cn(
-        "fixed inset-0 z-40 bg-cream overflow-y-auto transition-all duration-500 md:hidden",
+        "fixed inset-0 z-40 bg-cream overflow-y-auto transition-all duration-500 lg:hidden",
         open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       )}
       aria-hidden={!open}
@@ -140,8 +140,10 @@ export function MobileMenu({ open, onClose, triggerRef }: MobileMenuProps) {
               className={itemClass}
               style={itemStyle}
               onClick={onClose}
+              {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             >
               {item.label}
+              {item.external && <span className="sr-only"> (opens in a new tab)</span>}
             </Link>
           );
         })}

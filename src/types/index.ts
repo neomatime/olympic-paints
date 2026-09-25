@@ -95,5 +95,6 @@ export type StoreLocation = {
 export type NavItem = {
   label: string;
   href: string;
+  external?: boolean;
   children?: NavItem[];
 };
