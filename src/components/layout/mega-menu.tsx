@@ -36,7 +36,7 @@ function ArrowLink({ href, children, onClick }: { href: string; children: ReactN
     <Link
       href={href}
       onClick={onClick}
-      className="group inline-flex items-center gap-2 text-sm font-medium text-olympic-yellow hover:text-cream transition-colors"
+      className="group inline-flex items-center gap-2 text-sm font-medium text-ink underline decoration-olympic-yellow decoration-2 underline-offset-[6px] hover:decoration-ink transition-colors"
     >
       {children}
       <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
@@ -48,8 +48,8 @@ function PanelHeader({ title, description, link }: { title: string; description:
   return (
     <div className="flex items-start justify-between gap-8">
       <div className="max-w-2xl">
-        <h2 className="text-3xl leading-tight text-cream">{title}</h2>
-        <p className="mt-2 text-sm leading-relaxed text-cream/65">{description}</p>
+        <h2 className="text-3xl leading-tight text-ink">{title}</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
       </div>
       {link && <div className="shrink-0 pt-2">{link}</div>}
     </div>
@@ -58,7 +58,7 @@ function PanelHeader({ title, description, link }: { title: string; description:
 
 function Thumb({ src, alt, className }: { src: string; alt: string; className?: string }) {
   return (
-    <span className={cn("relative block overflow-hidden bg-cream/10", className)}>
+    <span className={cn("relative block overflow-hidden bg-ink/5", className)}>
       <Image src={src} alt={alt} fill sizes="160px" className="object-cover transition-transform duration-500 group-hover:scale-105" />
     </span>
   );
@@ -91,20 +91,20 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
             description="From sample pots and PVA wall paints to enamels, primers, sealers and preparation tools — everything you need for your next project."
             link={<ArrowLink href="/products" onClick={close}>View All Products</ArrowLink>}
           />
-          <ul className="mt-6 grid grid-cols-3 gap-x-4 border-t border-cream/10">
+          <ul className="mt-6 grid grid-cols-3 gap-x-4 border-t border-ink/10">
             {productTiles.map((tile) => (
-              <li key={tile.key} className="border-b border-cream/10">
+              <li key={tile.key} className="border-b border-ink/10">
                 <Link
                   href={tile.href}
                   onClick={close}
-                  className="group flex items-center gap-4 rounded-md px-2 py-3.5 hover:bg-cream/[0.04] transition-colors"
+                  className="group flex items-center gap-4 rounded-md px-2 py-3.5 hover:bg-paper transition-colors"
                 >
                   {tile.image && <Thumb src={tile.image} alt="" className="w-14 h-14 rounded-full shrink-0" />}
                   <span className="min-w-0 flex-1">
-                    <span className="block text-[15px] text-cream group-hover:text-olympic-yellow transition-colors">{tile.label}</span>
-                    <span className="mt-0.5 block text-xs leading-snug text-cream/55 line-clamp-2">{tile.description}</span>
+                    <span className="block text-[15px] text-ink group-hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">{tile.label}</span>
+                    <span className="mt-0.5 block text-xs leading-snug text-muted line-clamp-2">{tile.description}</span>
                   </span>
-                  <Chevron className="text-cream/50 transition-transform group-hover:translate-x-1 group-hover:text-olympic-yellow" />
+                  <Chevron className="text-ink/40 transition-transform group-hover:translate-x-1 group-hover:text-ink" />
                 </Link>
               </li>
             ))}
@@ -121,13 +121,13 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
             link={<ArrowLink href="/colour-cafe" onClick={close}>Explore the Colour Cafe</ArrowLink>}
           />
           <div className="mt-6 grid grid-cols-[1fr_300px] gap-8">
-            <ol className="grid grid-cols-2 gap-x-8 gap-y-4 border-t border-cream/10 pt-5">
+            <ol className="grid grid-cols-2 gap-x-8 gap-y-4 border-t border-ink/10 pt-5">
               {colourCafeVisitSteps.map((step) => (
                 <li key={step.num} className="flex gap-4">
-                  <span className="text-xs font-bold tracking-widest text-olympic-yellow pt-1">{step.num}</span>
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-olympic-yellow text-[11px] font-bold text-espresso">{step.num}</span>
                   <span>
-                    <span className="block text-[15px] text-cream">{step.title}</span>
-                    <span className="mt-0.5 block text-xs leading-snug text-cream/55">{step.desc}</span>
+                    <span className="block text-[15px] text-ink">{step.title}</span>
+                    <span className="mt-0.5 block text-xs leading-snug text-muted">{step.desc}</span>
                   </span>
                 </li>
               ))}
@@ -156,9 +156,9 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
               <li key={c.id}>
                 <Link href={`/collections/${c.slug}`} onClick={close} className="group block">
                   <Thumb src={c.coverImage} alt="" className="aspect-[4/5] w-full rounded-lg" />
-                  <span className="mt-3 flex items-center justify-between gap-2 text-[15px] text-cream group-hover:text-olympic-yellow transition-colors">
+                  <span className="mt-3 flex items-center justify-between gap-2 text-[15px] text-ink group-hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">
                     {c.name}
-                    <Chevron className="text-cream/50 transition-transform group-hover:translate-x-1 group-hover:text-olympic-yellow" />
+                    <Chevron className="text-ink/40 transition-transform group-hover:translate-x-1 group-hover:text-ink" />
                   </span>
                 </Link>
               </li>
@@ -180,7 +180,7 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
               <li key={room.id}>
                 <Link href="/inspiration" onClick={close} className="group block">
                   <Thumb src={room.images.after} alt="" className="aspect-[4/3] w-full rounded-lg" />
-                  <span className="mt-3 block text-sm text-cream group-hover:text-olympic-yellow transition-colors">{room.title}</span>
+                  <span className="mt-3 block text-sm text-ink group-hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">{room.title}</span>
                 </Link>
               </li>
             ))}
@@ -196,8 +196,8 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
             description="More than four decades of paint heritage, now shaped into colour guidance, design confidence and immersive experiences."
             link={<ArrowLink href="/our-story" onClick={close}>Read Our Story</ArrowLink>}
           />
-          <div className="mt-6 grid grid-cols-[1fr_360px] items-center gap-10 border-t border-cream/10 pt-6">
-            <p className="font-serif text-3xl leading-snug text-cream">
+          <div className="mt-6 grid grid-cols-[1fr_360px] items-center gap-10 border-t border-ink/10 pt-6">
+            <p className="font-serif text-3xl leading-snug text-ink">
               From trusted paint heritage to home transformation partner.
             </p>
             <Link href="/our-story" onClick={close} className="group block">
@@ -221,10 +221,10 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
                 <Link
                   href="/find-a-store"
                   onClick={close}
-                  className="group flex h-full flex-col rounded-lg border border-cream/10 p-5 hover:border-olympic-yellow/60 hover:bg-cream/[0.03] transition-colors"
+                  className="group flex h-full flex-col rounded-lg border border-ink/10 p-5 hover:border-olympic-yellow/60 hover:bg-paper transition-colors"
                 >
-                  <span className="text-[15px] text-cream group-hover:text-olympic-yellow transition-colors">{store.name}</span>
-                  <span className="mt-2 text-xs leading-relaxed text-cream/55">
+                  <span className="text-[15px] text-ink group-hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">{store.name}</span>
+                  <span className="mt-2 text-xs leading-relaxed text-muted">
                     {store.address ? `${store.address}, ${store.city}` : `${store.city}, ${store.province}`}
                   </span>
                 </Link>
@@ -242,18 +242,18 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
             description="Reach the Olympic Paints team directly."
             link={<ArrowLink href="/contact#enquiry" onClick={close}>Send a Message</ArrowLink>}
           />
-          <dl className="mt-6 grid grid-cols-3 gap-8 border-t border-cream/10 pt-6 text-sm">
+          <dl className="mt-6 grid grid-cols-3 gap-8 border-t border-ink/10 pt-6 text-sm">
             <div>
-              <dt className="text-xs uppercase tracking-widest text-cream/50">Call</dt>
-              <dd className="mt-2"><a href={PHONE_HREF} className="text-cream hover:text-olympic-yellow transition-colors">{PHONE}</a></dd>
+              <dt className="text-xs uppercase tracking-widest text-ink/40">Call</dt>
+              <dd className="mt-2"><a href={PHONE_HREF} className="text-ink hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">{PHONE}</a></dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-widest text-cream/50">Email</dt>
-              <dd className="mt-2"><a href={`mailto:${EMAIL}`} className="text-cream hover:text-olympic-yellow transition-colors">{EMAIL}</a></dd>
+              <dt className="text-xs uppercase tracking-widest text-ink/40">Email</dt>
+              <dd className="mt-2"><a href={`mailto:${EMAIL}`} className="text-ink hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">{EMAIL}</a></dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-widest text-cream/50">Head Office</dt>
-              <dd className="mt-2 text-cream/80">28 Mecca Rd, Lenasia, 1827</dd>
+              <dt className="text-xs uppercase tracking-widest text-ink/40">Head Office</dt>
+              <dd className="mt-2 text-ink/75">28 Mecca Rd, Lenasia, 1827</dd>
             </div>
           </dl>
         </>
@@ -263,11 +263,11 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
       return (
         <>
           <PanelHeader title="Your Account" description="Sign in to access your Olympic Paints account." />
-          <div className="mt-6 flex gap-4 border-t border-cream/10 pt-6">
+          <div className="mt-6 flex gap-4 border-t border-ink/10 pt-6">
             <Link href="/login" onClick={close} className="inline-flex items-center justify-center px-7 py-3.5 text-sm tracking-wide uppercase rounded-sm bg-olympic-yellow text-espresso font-semibold hover:bg-yellow-deep transition-colors">
               Sign In
             </Link>
-            <Link href="/register" onClick={close} className="inline-flex items-center justify-center px-7 py-3.5 text-sm tracking-wide uppercase rounded-sm border border-cream/40 text-cream hover:bg-cream/10 transition-colors">
+            <Link href="/register" onClick={close} className="inline-flex items-center justify-center px-7 py-3.5 text-sm tracking-wide uppercase rounded-sm border border-ink/20 text-ink hover:bg-ink/5 transition-colors">
               Create Account
             </Link>
           </div>
@@ -281,13 +281,13 @@ function PanelContent({ active, close }: { active: MenuKey; close: () => void })
             title="VibrAInt"
             description="VibrAInt is Olympic Paints' AI-powered colour tool. Choose the kind of space you are working on, explore colours through a look-and-feel journey, then bring your direction into a Colour Cafe consultation."
           />
-          <div className="mt-6 border-t border-cream/10 pt-6">
+          <div className="mt-6 border-t border-ink/10 pt-6">
             <a
               href="https://vibraint.net/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={close}
-              className="group inline-flex items-center gap-2 text-sm font-medium text-olympic-yellow hover:text-cream transition-colors"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-ink underline decoration-olympic-yellow decoration-2 underline-offset-[6px] hover:decoration-ink transition-colors"
             >
               Open VibrAInt<span className="sr-only"> (opens in a new tab)</span>
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span>
@@ -306,7 +306,7 @@ const utilityLinks = [
 ] as const;
 
 function UtilityIcon({ name }: { name: "image" | "pin" | "chat" }) {
-  const common = { className: "w-6 h-6 shrink-0 text-cream/70", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.4, "aria-hidden": true } as const;
+  const common = { className: "w-6 h-6 shrink-0 text-ink/60", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.4, "aria-hidden": true } as const;
   if (name === "pin")
     return (
       <svg {...common}>
@@ -435,7 +435,7 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
         aria-hidden="true"
         onClick={onClose}
         className={cn(
-          "fixed inset-0 z-[35] bg-night/30 transition-opacity duration-300",
+          "fixed inset-0 z-[35] bg-ink/20 transition-opacity duration-300",
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
       />
@@ -451,8 +451,8 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
           aria-label="Main menu"
           className={cn(
             "pointer-events-auto w-full max-w-[1360px] max-h-dvh overflow-y-auto overscroll-contain",
-            "bg-night/95 backdrop-blur-xl text-cream border-cream/10 lg:border lg:border-t-0 lg:rounded-b-2xl",
-            "shadow-[0_24px_60px_rgb(0_0_0/0.35)]",
+            "bg-cream/[0.97] backdrop-blur-xl text-ink border-ink/10 lg:border lg:border-t-0 lg:rounded-b-2xl",
+            "shadow-[0_24px_60px_rgb(17_17_17/0.14)]",
             "transition-[clip-path,opacity] duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
             open ? "[clip-path:inset(0_0_0%_0)] opacity-100" : "[clip-path:inset(0_0_100%_0)] opacity-0"
           )}
@@ -465,8 +465,8 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
           >
             {/* Desktop mega menu */}
             <div className="hidden lg:block">
-              <div className="grid grid-cols-[240px_1fr] gap-10 border-t border-cream/10 px-10 pt-7 pb-8">
-                <ul data-menu-first className="border-r border-cream/10 pr-6">
+              <div className="grid grid-cols-[240px_1fr] gap-10 border-t border-ink/10 px-10 pt-7 pb-8">
+                <ul data-menu-first className="border-r border-ink/10 pr-6">
                   {menuItems.map((item) => {
                     const isActive = active === item.key;
                     return (
@@ -478,11 +478,11 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
                           selected={isActive}
                           className={cn(
                             "group -ml-3 flex items-center justify-between rounded-md px-3 py-2.5 text-[17px] transition-colors",
-                            isActive ? "bg-cream/[0.05] text-olympic-yellow" : "text-cream hover:text-olympic-yellow"
+                            isActive ? "bg-yellow-soft font-medium text-ink" : "text-ink hover:bg-paper"
                           )}
                         >
                           {item.label}
-                          <Chevron className={cn("transition-transform group-hover:translate-x-1", isActive ? "text-olympic-yellow" : "text-cream/40")} />
+                          <Chevron className={cn("transition-transform group-hover:translate-x-1", isActive ? "text-yellow-deep" : "text-ink/35")} />
                         </MenuLink>
                       </li>
                     );
@@ -493,16 +493,16 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
                 </div>
               </div>
 
-              <ul className="mx-10 grid grid-cols-4 border-t border-cream/10">
+              <ul className="mx-10 grid grid-cols-4 border-t border-ink/10">
                 {utilityLinks.map((u, i) => (
-                  <li key={u.href} className={cn("py-5", i > 0 && "border-l border-cream/10 pl-6")}>
+                  <li key={u.href} className={cn("py-5", i > 0 && "border-l border-ink/10 pl-6")}>
                     <Link href={u.href} onClick={onClose} className="group flex items-center gap-4">
                       <UtilityIcon name={u.icon} />
                       <span className="min-w-0 flex-1">
-                        <span className="block text-sm text-cream group-hover:text-olympic-yellow transition-colors">{u.title}</span>
-                        <span className="block text-xs text-cream/55">{u.desc}</span>
+                        <span className="block text-sm text-ink group-hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">{u.title}</span>
+                        <span className="block text-xs text-muted">{u.desc}</span>
                       </span>
-                      <Chevron className="mr-4 text-cream/40 transition-transform group-hover:translate-x-1 group-hover:text-olympic-yellow" />
+                      <Chevron className="mr-4 text-ink/35 transition-transform group-hover:translate-x-1 group-hover:text-ink" />
                     </Link>
                   </li>
                 ))}
@@ -510,16 +510,16 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
             </div>
 
             {/* Mobile accordion */}
-            <div className="lg:hidden border-t border-cream/10 px-6 pb-10">
+            <div className="lg:hidden border-t border-ink/10 px-6 pb-10">
               <ul data-menu-first>
                 {menuItems.map((item) => {
                   const children = mobileChildren[item.key];
                   if (!children) {
                     return (
-                      <li key={item.key} className="border-b border-cream/10">
-                        <MenuLink item={item} onClick={onClose} className="flex items-center justify-between py-4 text-xl text-cream active:text-olympic-yellow">
+                      <li key={item.key} className="border-b border-ink/10">
+                        <MenuLink item={item} onClick={onClose} className="flex items-center justify-between py-4 text-xl text-ink">
                           {item.label}
-                          <Chevron className="text-cream/40" />
+                          <Chevron className="text-ink/35" />
                         </MenuLink>
                       </li>
                     );
@@ -527,21 +527,21 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
                   const isOpen = expanded === item.key;
                   const subId = `mobile-sub-${item.key}`;
                   return (
-                    <li key={item.key} className="border-b border-cream/10">
+                    <li key={item.key} className="border-b border-ink/10">
                       <button
                         type="button"
                         aria-expanded={isOpen}
                         aria-controls={subId}
                         onClick={() => setExpanded(isOpen ? null : item.key)}
-                        className={cn("flex w-full items-center justify-between py-4 text-left text-xl", isOpen ? "text-olympic-yellow" : "text-cream")}
+                        className={cn("flex w-full items-center justify-between py-4 text-left text-xl", isOpen ? "font-medium text-ink" : "text-ink")}
                       >
                         {item.label}
-                        <Chevron className={cn("transition-transform", isOpen ? "rotate-90 text-olympic-yellow" : "text-cream/40")} />
+                        <Chevron className={cn("transition-transform", isOpen ? "rotate-90 text-yellow-deep" : "text-ink/35")} />
                       </button>
                       <ul id={subId} hidden={!isOpen} className="pb-4 pl-1">
                         {children.map((child) => (
                           <li key={child.href}>
-                            <Link href={child.href} onClick={onClose} className="block py-2.5 text-base text-cream/75 hover:text-olympic-yellow">
+                            <Link href={child.href} onClick={onClose} className="block py-2.5 text-base text-ink/75 hover:underline decoration-olympic-yellow decoration-2 underline-offset-4">
                               {child.label}
                             </Link>
                           </li>
@@ -551,9 +551,9 @@ export function MegaMenu({ open, onClose, triggerRef }: MegaMenuProps) {
                   );
                 })}
               </ul>
-              <p className="mt-8 text-sm text-cream/60">
+              <p className="mt-8 text-sm text-muted">
                 Need help?{" "}
-                <a href={PHONE_HREF} className="text-cream underline underline-offset-4">{PHONE}</a>
+                <a href={PHONE_HREF} className="text-ink underline underline-offset-4">{PHONE}</a>
               </p>
             </div>
           </div>
