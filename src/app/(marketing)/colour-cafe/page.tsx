@@ -27,7 +27,7 @@ const galleryItems = [
   },
   {
     src: "/images/colour-cafe/choosing-colour.webp",
-    alt: "Two visitors holding up a paint colour strip to the light",
+    alt: "Paint sample boards in Celadon Green, Suede Tan, Almost White and Whole Wheat on a wooden stand",
     title: "See the feeling before you choose the finish.",
     subtitle: "Future Home",
   },
@@ -153,7 +153,7 @@ export default function ColourCafePage() {
         <ScrollReveal delay={1} className="md:order-1 relative aspect-[4/3] rounded-sm overflow-hidden">
           <Image
             src="/images/colour-cafe/material-wall.webp"
-            alt="Visitors talking in the Colour Cafe beside the consultation screen and plants"
+            alt="A Colour Cafe corner with the illuminated colour wall, fabric drapes, a woven lamp and plants"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
