@@ -6,7 +6,6 @@ import { ImageGallery } from "@/components/shared/image-gallery";
 import { VideoPlayer } from "@/components/shared/video-player";
 import { Breadcrumb } from "@/components/shared/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { team } from "@/data/team";
 import { LocalVideo } from "@/components/shared/local-video";
 import { LoopingVideo } from "@/components/shared/looping-video";
 
@@ -15,6 +14,29 @@ export const metadata: Metadata = {
   description:
     "Discover Olympic Paints' South African heritage and its evolution into a colour, lifestyle and home transformation partner.",
 };
+
+const storyPhotos = [
+  {
+    src: "/images/our-story/consultation.webp",
+    alt: "An Olympic Paints designer and a client working through material samples at the Colour Cafe",
+    subtitle: "Consultation",
+  },
+  {
+    src: "/images/our-story/colour-wall.webp",
+    alt: "Two visitors choosing paint colours together at the Colour Cafe sample wall",
+    subtitle: "Choosing Colour",
+  },
+  {
+    src: "/images/our-story/coffee-shelves.webp",
+    alt: "Framed Coffee, Connect, Colour and Create prints above the Colour Cafe coffee shelves",
+    subtitle: "The Coffee Bar",
+  },
+  {
+    src: "/images/our-story/design-studio.webp",
+    alt: "The Colour Cafe consultation desk with warm lit alcoves and a screen",
+    subtitle: "Design Studio",
+  },
+];
 
 const journey = [
   { num: "01", title: "Heritage", desc: "Decades of local knowledge and trust across South African homes." },
@@ -32,6 +54,7 @@ export default function OurStoryPage() {
         eyebrow="More Than 40 Years"
         title="From trusted paint heritage to home transformation partner."
         description="Olympic Paints has grown with South African homes for more than four decades. Today, that heritage becomes something warmer and more human: colour guidance, design confidence and immersive experiences for people creating spaces they love."
+        backgroundImage="/images/our-story/hero.webp"
         compact
       />
 
@@ -108,12 +131,7 @@ export default function OurStoryPage() {
         </ScrollReveal>
         <ImageGallery
           className="mt-12"
-          items={team.map((member) => ({
-            src: member.image,
-            alt: member.name,
-            title: member.name,
-            subtitle: member.role,
-          }))}
+          items={storyPhotos}
         />
       </section>
 

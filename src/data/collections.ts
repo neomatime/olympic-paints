@@ -17,8 +17,7 @@ export const collections: Collection[] = [
     name: "Inspiring Optimism",
     description:
       "The 2026 Colour of the Year collection. Warm, confident tones that bring energy and calm to any room.",
-    coverImage:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175406_c768e03d-e562-4ba7-801e-b7db4975fec8.png",
+    coverImage: "/images/collections/inspiring-optimism.webp",
     colours: [byId("olympic-yellow"), byId("morning-yellow"), byId("lemon-light")],
     rooms: [],
     year: 2026,
@@ -28,7 +27,7 @@ export const collections: Collection[] = [
     slug: "gallery-whites",
     name: "Whites",
     description: "Clean, gallery-ready whites and soft greys that let architecture and light take the lead.",
-    coverImage: "/images/colour-cafe-studio.svg",
+    coverImage: "/images/collections/gallery-whites.webp",
     colours: [byId("gallery-white"), byId("cloud-white"), byId("soft-grey")],
     rooms: [],
     year: 2026,
@@ -38,8 +37,7 @@ export const collections: Collection[] = [
     slug: "cool-calm",
     name: "Cool Calm",
     description: "Sky washes and studio blues for spaces designed to feel calm, quiet and considered.",
-    coverImage:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_6ebea8f8-552f-4638-ab05-b057ae298e29.png",
+    coverImage: "/images/collections/cool-calm.webp",
     colours: [byId("sky-wash"), byId("studio-blue"), byId("slate-line")],
     rooms: [],
     year: 2026,
@@ -49,7 +47,7 @@ export const collections: Collection[] = [
     slug: "nature-notes",
     name: "Nature Notes",
     description: "Leaf greens and deep teals bringing the outdoors in, grounded and organic.",
-    coverImage: "/images/heritage-interior.svg",
+    coverImage: "/images/collections/nature-notes.webp",
     colours: [byId("leaf-green"), byId("deep-teal")],
     rooms: [],
     year: 2026,
@@ -59,8 +57,7 @@ export const collections: Collection[] = [
     slug: "graphic-accents",
     name: "Graphic Accents",
     description: "Confident ink black for bold architectural moments and graphic contrast.",
-    coverImage:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_3BlKpYFaPS2oUsGPVOWIZ9Ewlf6/hf_20260609_175401_2d5368d6-76ec-4138-9dba-25cb57ea653f.png",
+    coverImage: "/images/collections/graphic-accents.webp",
     colours: [byId("ink-black")],
     rooms: [],
     year: 2026,
