@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -19,6 +20,7 @@ export default function FindAStorePage() {
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Find a Store" }]} />
       <PageHero
         eyebrow="Colour Cafe Branches"
+        backgroundImage="/images/find-a-store/hero.webp"
         title="Find your nearest Colour Cafe."
         description="Visit a Colour Cafe to meet Olympic Paints designers, explore colour in context and begin shaping a home, workspace, retail space or custom design brief with confidence."
         compact
@@ -110,17 +112,28 @@ export default function FindAStorePage() {
         </ScrollReveal>
       </section>
 
-      <section className="py-24 px-6 bg-sage/10 text-center">
-        <ScrollReveal className="max-w-2xl mx-auto">
-          <h2>Not sure which branch to visit?</h2>
-          <p className="mt-4 text-muted leading-relaxed">
-            Get in touch and we will help you choose the right Colour Cafe, prepare your brief and route your project
-            to the right design support.
-          </p>
-          <Button href="/contact#enquiry" className="mt-8" variant="primary">
-            Get in touch
-          </Button>
-        </ScrollReveal>
+      <section className="py-24 px-6 bg-sage/10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <ScrollReveal className="relative aspect-[4/3] overflow-hidden rounded-sm">
+            <Image
+              src="/images/find-a-store/visit.webp"
+              alt="The illuminated Olympic Paints sign above a round table and stools in the Colour Cafe"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={1}>
+            <h2>Not sure which branch to visit?</h2>
+            <p className="mt-4 text-muted leading-relaxed">
+              Get in touch and we will help you choose the right Colour Cafe, prepare your brief and route your project
+              to the right design support.
+            </p>
+            <Button href="/contact#enquiry" className="mt-8" variant="primary">
+              Get in touch
+            </Button>
+          </ScrollReveal>
+        </div>
       </section>
     </>
   );
