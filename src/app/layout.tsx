@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { SkipLink } from "@/components/layout/skip-link";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ChatLauncher } from "@/components/layout/chat-launcher";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CartProvider } from "@/context/cart-context";
 import { storeLocations } from "@/data/store-locations";
@@ -101,6 +102,7 @@ export default function RootLayout({
           <SiteHeader />
           <main id="main">{children}</main>
           <SiteFooter />
+          <ChatLauncher />
         </CartProvider>
       </body>
     </html>

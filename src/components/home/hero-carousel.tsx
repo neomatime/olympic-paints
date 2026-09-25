@@ -40,36 +40,43 @@ export function HeroCarousel() {
         <div
           key={slide.image}
           className={cn(
-            "absolute inset-0 bg-cover bg-center transition-opacity duration-1000",
+            "absolute inset-0 bg-cover bg-center md:scale-[1.15] md:origin-top transition-opacity duration-1000",
             i === active ? "opacity-100" : "opacity-0"
           )}
           style={{ backgroundImage: `url('${slide.image}')` }}
           aria-hidden={i !== active}
         />
       ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-ink/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-transparent to-ink/15" aria-hidden="true" />
 
-      <div className="relative z-10 h-full flex flex-col justify-end pb-24 px-6 md:px-16 max-w-5xl">
-        <p className="flex items-center gap-3 mb-4 text-xs font-bold tracking-[0.16em] uppercase text-cream/60">
-          <span className="w-6 h-px bg-cream/40" aria-hidden="true" />
-          2026 Colour of the Year
-        </p>
-        <h1 className="text-cream">
-          Inspiring
-          <br />
-          <em className="font-serif">Optimism</em>
-        </h1>
-        <p className="mt-6 text-cream/70 max-w-lg leading-relaxed">
-          Colour, creativity and expert guidance brought together at the Colour Cafe so you can choose paint with
-          confidence.
-        </p>
-        <div className="flex gap-4 mt-8">
-          <Button href="/contact#enquiry" variant="primary">
-            Book a Colour Cafe consultation
-          </Button>
-          <Button href="/collections" variant="outline">
-            Explore colours
-          </Button>
+      {/* Content sits high, over the clean wall above the sofa, rather than on the furniture. */}
+      <div className="relative z-10 h-full px-6 pt-28 sm:pt-32 md:pt-[max(8rem,16vh)] md:pl-[10vw] lg:pl-[18vw] 2xl:pl-[22vw]">
+        <div className="relative max-w-[600px]">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-x-16 -inset-y-14 -z-10 bg-[radial-gradient(ellipse_at_center,rgb(8_20_20/0.38),transparent_70%)]"
+          />
+          <p className="flex items-center gap-3 text-xs font-bold tracking-[0.16em] uppercase text-cream/80">
+            <span className="w-8 h-px bg-cream/50" aria-hidden="true" />
+            2026 Colour of the Year
+          </p>
+          <h1 className="mt-4 text-cream text-[clamp(2.75rem,5vw,5.5rem)] leading-[0.95]">
+            Inspiring
+            <br />
+            <em className="font-serif">Optimism</em>
+          </h1>
+          <p className="mt-5 max-w-[560px] text-base md:text-lg text-cream/85 leading-relaxed">
+            Colour, creativity and expert guidance brought together at the Colour Cafe so you can choose paint with
+            confidence.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Button href="/contact#enquiry" variant="primary" className="w-full sm:w-auto">
+              Book a Colour Cafe consultation
+            </Button>
+            <Button href="/collections" variant="outline" className="w-full sm:w-auto">
+              Explore colours
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -108,7 +115,7 @@ export function HeroCarousel() {
         )}
       </div>
 
-      <p className="absolute right-6 bottom-8 text-xs text-cream/60 hidden md:block" aria-hidden="true">
+      <p className="absolute left-6 md:left-16 bottom-8 text-xs text-cream/60 hidden md:block" aria-hidden="true">
         Paint Manufacturer &mdash; Est. 1981 &middot; Lenasia ZA
       </p>
     </section>
