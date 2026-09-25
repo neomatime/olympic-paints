@@ -12,6 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
 import { storeLocations } from "@/data/store-locations";
+import { PalettePicker, PALETTE_MAX, paletteSummary } from "@/components/studio/palette-picker";
+import type { ColourSwatch } from "@/types";
 
 const guideSteps = [
   {
@@ -49,6 +51,8 @@ type ContactFormErrors = {
 export function ContactPageClient() {
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [palette, setPalette] = useState<ColourSwatch[]>([]);
+  const [sentPalette, setSentPalette] = useState<ColourSwatch[]>([]);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -68,7 +72,9 @@ export function ContactPageClient() {
 
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length === 0) {
-      // Phase 1: mocked submission — no message is actually sent.
+      // Phase 1: mocked submission — no message is actually sent. The palette travels
+      // with the contact details in the form data (the "palette" field).
+      setSentPalette(palette);
       setSubmitted(true);
     }
   }
@@ -113,6 +119,23 @@ export function ContactPageClient() {
           {submitted ? (
             <div role="status" className="mt-10 p-8 border border-ink/10 rounded-sm text-center">
               <h3>Thanks for reaching out.</h3>
+              {sentPalette.length > 0 && (
+                <div className="mt-6">
+                  <p className="text-sm font-medium text-ink/80">Your palette</p>
+                  <ul className="mt-3 flex flex-wrap justify-center gap-4" aria-label="Palette sent with your message">
+                    {sentPalette.map((colour) => (
+                      <li key={colour.id} className="flex flex-col items-center gap-1.5">
+                        <span
+                          aria-hidden="true"
+                          className="h-10 w-10 rounded-full border border-ink/10"
+                          style={{ backgroundColor: colour.hex }}
+                        />
+                        <span className="text-xs text-ink/80">{colour.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <p className="mt-3 text-muted leading-relaxed">
                 This is a Phase 1 preview, so your message wasn&apos;t actually sent — we&apos;ll wire up real delivery
                 in Phase 2. In the meantime, call{" "}
@@ -125,7 +148,16 @@ export function ContactPageClient() {
                 </a>
                 .
               </p>
-              <Button type="button" variant="ghost" className="mt-6" onClick={() => setSubmitted(false)}>
+              <Button
+                type="button"
+                variant="ghost"
+                className="mt-6"
+                onClick={() => {
+                  setSubmitted(false);
+                  setPalette([]);
+                  setSentPalette([]);
+                }}
+              >
                 Send another message
               </Button>
             </div>
@@ -146,6 +178,17 @@ export function ContactPageClient() {
                 required
                 error={errors.message}
               />
+              <fieldset className="space-y-3">
+                <legend className="text-sm font-medium text-ink/70">
+                  Build a colour palette <span className="font-normal text-muted">(optional)</span>
+                </legend>
+                <p className="text-sm text-muted">
+                  Pick up to {PALETTE_MAX} colours you are drawn to. We will send them to our team with your message so
+                  your consultation starts from your palette.
+                </p>
+                <PalettePicker value={palette} onChange={setPalette} />
+                <input type="hidden" name="palette" value={paletteSummary(palette)} />
+              </fieldset>
               <Button type="submit" variant="primary" className="w-full sm:w-auto">
                 Send message
               </Button>
