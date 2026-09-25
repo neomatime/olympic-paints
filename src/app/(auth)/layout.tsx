@@ -10,9 +10,9 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
     <div className="pt-16 lg:pt-20 lg:grid lg:grid-cols-2">
       <aside className="relative hidden lg:block" aria-hidden="true">
         <div className="sticky top-20 h-[calc(100vh-5rem)] min-h-[560px] overflow-hidden">
-          <Image src="/images/hero-right.webp" alt="" fill sizes="50vw" className="object-cover" priority />
-          <div className="absolute left-12 top-12 right-12 max-w-sm text-cream">
-            <p className="flex items-center gap-3 text-xs font-bold tracking-[0.16em] uppercase text-cream/80">
+          <Image src="/images/colour-cafe/coffee-bar.webp" alt="" fill sizes="50vw" className="object-cover" priority />
+          <div className="absolute left-10 bottom-10 right-10 max-w-sm rounded-sm bg-cream/85 px-7 py-6 text-ink backdrop-blur-sm">
+            <p className="flex items-center gap-3 text-xs font-bold tracking-[0.16em] uppercase text-ink/70">
               <span className="w-6 h-px bg-olympic-yellow" />
               The Colour Cafe
             </p>
