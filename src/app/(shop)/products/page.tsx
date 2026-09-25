@@ -19,6 +19,7 @@ export default function ProductsPage() {
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Products" }]} />
       <PageHero
         eyebrow="Shop"
+        backgroundImage="/images/products/hero.webp"
         title="Paint, colour and everything in between."
         description="From sample pots and PVA wall paints to enamels, primers, sealers and preparation tools — everything you need for your next project."
         compact

@@ -96,7 +96,7 @@ export const products: Product[] = [
     category: "samples",
     sizes: [{ label: "250ml", ml: 250, price: 60 }],
     colours: [byId("olympic-yellow"), byId("leaf-green"), byId("lemon-light"), byId("dusk-blue"), byId("studio-violet")],
-    images: ["https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=82"],
+    images: ["/images/products/sample-pots.webp"],
     featured: true,
     rating: { score: 5.0, count: 210 },
   },
@@ -137,7 +137,7 @@ export const products: Product[] = [
     finish: "matt",
     sizes: [{ label: "250ml", ml: 250, price: 60 }],
     colours: [byId("suburban-bliss")],
-    images: ["https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=82"],
+    images: ["/images/products/suburban-bliss-sample.webp"],
     featured: false,
   },
   {
