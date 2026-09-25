@@ -17,7 +17,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const menuToggleRef = useRef<HTMLButtonElement>(null);
 
-  // Transparent over the home hero; solid dark teal once scrolled or on other pages.
+  // Transparent over the home hero; solid white once scrolled or on other pages.
   // While the menu is open the panel supplies the background.
   const solid = !menuOpen && (pathname !== "/" || isScrolled);
 
@@ -25,8 +25,10 @@ export function SiteHeader() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 text-cream transition-colors duration-300",
-          solid ? "bg-night/92 backdrop-blur-md border-b border-cream/10" : "bg-transparent border-b border-transparent"
+          "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+          solid
+            ? "bg-cream/95 backdrop-blur-md border-b border-ink/10 text-ink"
+            : "bg-transparent border-b border-transparent text-cream"
         )}
       >
         <div className="mx-auto flex h-16 lg:h-20 max-w-[1360px] items-center justify-between px-5 lg:px-10">
@@ -44,7 +46,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2 lg:gap-4">
             <Link
               href="/cart"
-              className="relative flex h-11 w-11 items-center justify-center rounded-full hover:text-olympic-yellow transition-colors"
+              className={cn("relative flex h-11 w-11 items-center justify-center rounded-full transition-colors", solid ? "hover:text-ink/60" : "hover:text-olympic-yellow")}
               aria-label={count > 0 ? `Shopping bag, ${count} ${count === 1 ? "item" : "items"}` : "Shopping bag"}
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -65,10 +67,10 @@ export function SiteHeader() {
               onClick={() => setMenuOpen((o) => !o)}
               aria-expanded={menuOpen}
               aria-controls="site-menu"
-              className="group flex items-center gap-3 rounded-full py-1 pl-3 pr-1 hover:text-olympic-yellow transition-colors"
+              className={cn("group flex items-center gap-3 rounded-full py-1 pl-3 pr-1 transition-colors", solid ? "hover:text-ink/60" : "hover:text-olympic-yellow")}
             >
               <span className="text-sm tracking-wide">{menuOpen ? "Close" : "Menu"}</span>
-              <span className="relative flex h-10 w-10 items-center justify-center rounded-full border border-cream/40 group-hover:border-olympic-yellow transition-colors" aria-hidden="true">
+              <span className={cn("relative flex h-10 w-10 items-center justify-center rounded-full border group-hover:border-olympic-yellow transition-colors", solid ? "border-ink/25" : "border-cream/40")} aria-hidden="true">
                 <span className={cn("absolute h-px w-4 bg-current transition-transform duration-300", menuOpen ? "rotate-45" : "-translate-y-[5px]")} />
                 <span className={cn("absolute h-px w-4 bg-current transition-opacity duration-200", menuOpen && "opacity-0")} />
                 <span className={cn("absolute h-px w-4 bg-current transition-transform duration-300", menuOpen ? "-rotate-45" : "translate-y-[5px]")} />
