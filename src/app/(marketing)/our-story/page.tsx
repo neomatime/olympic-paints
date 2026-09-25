@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const storyPhotos = [
   {
     src: "/images/our-story/consultation.webp",
-    alt: "An Olympic Paints designer and a client working through material samples at the Colour Cafe",
+    alt: "A smiling guest in the Colour Cafe talking with two visitors, framed by plants",
     subtitle: "Consultation",
   },
   {
