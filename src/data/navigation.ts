@@ -22,6 +22,7 @@ export const navRight: NavItem[] = [
   { label: "Inspiration", href: "/inspiration" },
   { label: "Find a Store", href: "/find-a-store" },
   { label: "Contact", href: "/contact" },
+  { label: "Login", href: "/login" },
 ];
 
 export const navItems: NavItem[] = [...navLeft, ...navRight];
