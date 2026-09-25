@@ -33,6 +33,7 @@
   --color-blush: #D7D7D2;
   --color-sage: #7E9B72;
   --color-muted: #5E5E5E;
+  --color-night: #081918;
 
   --font-serif: 'Balimo', Georgia, serif;
 
@@ -41,6 +42,17 @@
 
 @theme inline {
   --font-sans: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+}
+
+@keyframes menu-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @layer base {

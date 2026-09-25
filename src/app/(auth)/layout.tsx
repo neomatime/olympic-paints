@@ -7,9 +7,9 @@ export const metadata: Metadata = {
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="pt-16 lg:pt-24 lg:grid lg:grid-cols-2">
+    <div className="pt-16 lg:pt-20 lg:grid lg:grid-cols-2">
       <aside className="relative hidden lg:block" aria-hidden="true">
-        <div className="sticky top-24 h-[calc(100vh-6rem)] min-h-[560px] overflow-hidden">
+        <div className="sticky top-20 h-[calc(100vh-5rem)] min-h-[560px] overflow-hidden">
           <Image src="/images/hero-right.webp" alt="" fill sizes="50vw" className="object-cover" priority />
           <div className="absolute left-12 top-12 right-12 max-w-sm text-cream">
             <p className="flex items-center gap-3 text-xs font-bold tracking-[0.16em] uppercase text-cream/80">
@@ -23,7 +23,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         </div>
       </aside>
 
-      <div className="flex justify-center px-6 py-12 md:py-20 lg:items-center lg:min-h-[calc(100vh-6rem)] lg:px-16">
+      <div className="flex justify-center px-6 py-12 md:py-20 lg:items-center lg:min-h-[calc(100vh-5rem)] lg:px-16">
         <div className="w-full max-w-md">{children}</div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { colourCafeVisitSteps } from "@/data/colour-cafe";
 import Link from "next/link";
 import Image from "next/image";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -14,13 +15,7 @@ export const metadata: Metadata = {
     "Visit the Olympic Paints Colour Cafe, an immersive design destination for coffee, consultation, colour and home transformation.",
 };
 
-const visitSteps = [
-  { num: "01", title: "Coffee", desc: "Begin gently, with a drink and a conversation about how you want to live." },
-  { num: "02", title: "Connect", desc: "Share photos, plans, materials, dreams and design questions." },
-  { num: "03", title: "Colour", desc: "Explore palettes beside flooring, fabric, furniture, lighting and texture." },
-  { num: "04", title: "Create", desc: "Build feel boards and room directions with expert support." },
-  { num: "05", title: "Transform", desc: "Leave with a clearer, calmer and more confident home plan." },
-];
+const visitSteps = colourCafeVisitSteps;
 
 const galleryItems = [
   {
