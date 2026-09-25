@@ -40,7 +40,7 @@ export default function FindAStorePage() {
                 <span className="inline-block w-fit mb-4 px-3 py-1 text-xs font-bold uppercase tracking-wide bg-olympic-yellow/20 text-espresso rounded-sm">
                   Now Open
                 </span>
-                <h2 className="text-2xl md:text-[1.75rem] leading-tight">{store.name}</h2>
+                <h2 className="text-2xl md:text-xl lg:text-[1.75rem] leading-tight">{store.name}</h2>
                 <dl className="mt-4 space-y-2 text-sm text-muted">
                   <div>
                     <dt className="font-medium text-ink/70">{store.address ? "Address" : "Location"}</dt>

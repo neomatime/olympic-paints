@@ -156,7 +156,7 @@ export function ContactPageClient() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <ScrollReveal>
             <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2 className="text-2xl leading-tight">Colour Cafe visits</h2>
+              <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Colour Cafe visits</h2>
               <p className="mt-3 text-muted text-sm leading-relaxed">
                 Come for coffee, guidance and an immersive look at colour, materials and room direction.
               </p>
@@ -167,7 +167,7 @@ export function ContactPageClient() {
           </ScrollReveal>
           <ScrollReveal delay={1}>
             <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2 className="text-2xl leading-tight">Design consultations</h2>
+              <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Design consultations</h2>
               <p className="mt-3 text-muted text-sm leading-relaxed">
                 Share your space, style direction and timeline so a specialist can guide your palette, finishes and
                 next steps.
@@ -179,7 +179,7 @@ export function ContactPageClient() {
           </ScrollReveal>
           <ScrollReveal delay={2}>
             <article className="p-8 border border-ink/10 rounded-sm h-full">
-              <h2 className="text-2xl leading-tight">Store support</h2>
+              <h2 className="text-2xl md:text-xl lg:text-2xl leading-tight">Store support</h2>
               <p className="mt-3 text-muted text-sm leading-relaxed">
                 Need practical help with finishes, quantities or your nearest partner location? Call{" "}
                 <a href={`tel:${hq.phone.replace(/[^\d+]/g, "")}`} className="underline">

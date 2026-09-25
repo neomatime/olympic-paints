@@ -84,7 +84,7 @@ export function ProductDetail({ product }: { product: Product }) {
             {categoryLabel(product.category)}
             {product.finish ? ` — ${product.finish.charAt(0).toUpperCase()}${product.finish.slice(1)}` : ""}
           </p>
-          <h1 className="mt-3">{product.name}</h1>
+          <h1 className="mt-3 text-4xl md:text-5xl xl:text-6xl leading-[1.05]">{product.name}</h1>
 
           {product.rating && (
             <div className="flex items-center gap-2 mt-3 text-sm text-muted">
