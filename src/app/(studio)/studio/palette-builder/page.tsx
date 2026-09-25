@@ -16,6 +16,7 @@ export default function PaletteBuilderPage() {
         eyebrow="Build Your Palette"
         title="Combine colours until they feel right."
         description="Select up to five Olympic Paints colours, preview them side by side, and take your custom palette with you."
+        backgroundImage="/images/studio/palette-builder-hero.webp"
         compact
       />
 
